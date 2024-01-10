@@ -1,0 +1,81 @@
+fr:
+  time:
+    formats:
+      default: "%B %d %Y %H:%M"
+  bands:
+    rolling_stones: "The Rolling Stones"
+    beatles: "The Beatles"
+    acdc: "AC/DC"
+  devise:
+    sign_in: "Authentification"
+  vue:
+    front:
+      title: "Front end"
+      nav:
+        homepage: "Accueil"
+        pages: "Pages"
+      home:
+        title: "Musiciens"
+        breadcrumb: "Tous les musiciens"        
+      pages:
+        title: "Pages"
+        server_404: "Ce lien provoque une 404 venant du routage serveur"
+        client_404: "Ce lien provoque un 404 venant du routage côté client"
+        server_401: "Ce lien appelle l'API qui lui répond une 401"
+        server_500: "Ce lien appelle l'API qui lui répond une 500"
+        admin_link: "» Envie de voir l'admin ?"
+      musicians:
+        title: "Details concernant ce musicien"
+        id: "Id"
+        name: "Nom"
+        band: "Groupe"        
+      errors:
+        title: "Pages d'erreurs"
+    admin:
+      title: "Admin"
+      save: "Enregistrer"
+      cancel: "Annuler"
+      filter: "Filtrer"
+      reset_filters: "Reseter les filtres"
+      delete: "Supprimer"
+      no_result: "Aucun resultat :-/"
+      any: "Tous"
+      nav:
+        dashboard: "Dashboard"
+        musicians: "Musiciens"
+        websockets: "Websockets"      
+        logout: "Déconnection"
+      dashboard:
+        title: "Dashboard"
+        musicians: "Aucun musician | Un musicien | musiciens" 
+      musicians:
+        create: "+ Ajouter un musicien"
+        new: "Nouveau musicien"        
+        form:
+          id: "Id"
+          name: "Nom"
+          band: "Groupe"   
+        comment: "This whole CRUD section is deliberatly slowed down so you can actually see the animations. Comment out the \"slow\" method in Api::Admin::MusiciansController to use the app at full speed"     
+      confirm: "Etes-vous sur ?"
+      websockets: 
+        placeholder: "Tapez un message..."
+        publish: "Publier"
+        comment1: "Vous pouvez aussi publier un message depuis la console Rails :"
+        code_example: "ActionCable.server.broadcast(\"ChatChannel\", { message: \"hey!\" })"
+        comment2: "Tous les messages que vous publiez sont passés en majuscule"
+        server_side: " côté serveur. "
+        comment3: "Si vous ouvrez plusieurs onglets, les messages seront en majuscules sur chacun d'eux."
+        waiting_messages: "En attente de messages..."
+  activerecord:
+    attributes:        
+      user:
+        email: "Adresse Email"
+        password: "Mot de passe"
+    errors:
+      models:
+        musician:
+          attributes:
+            name:
+              blank: "Saisie requise"
+            band:
+              blank: "Merci de sélectionner un groupe"

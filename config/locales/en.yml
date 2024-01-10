@@ -1,31 +1,81 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
-  hello: "Hello world"
+  time:
+    formats:
+      default: "%B %d %Y %H:%M"
+  bands:
+    rolling_stones: "The Rolling Stones"
+    beatles: "The Beatles"
+    acdc: "AC/DC"
+  devise:
+    sign_in: "Sign in"
+  vue:
+    front:
+      title: "Front end"
+      nav:
+        homepage: "Home"
+        pages: "Pages"
+      home:
+        title: "Musicians"
+        breadcrumb: "All musicians"        
+      pages:
+        title: "Pages"
+        server_404: "This link triggers a Server side routing 404"
+        client_404: "This link triggers a Client side routing 404"
+        server_401: "This link performs an API call that responds a 401"
+        server_500: "This link performs an API call that responds a 500"
+        admin_link: "» Wanna go to the admin?"
+      musicians:
+        title: "Details about this musician"
+        id: "Id"
+        name: "Name"
+        band: "Band"        
+      errors:
+        title: "Error pages"
+    admin:
+      title: "Admin"
+      save: "Save"
+      cancel: "Cancel"
+      filter: "Filter"
+      reset_filters: "Reset filters"
+      delete: "Delete"
+      no_result: "No result :-/"
+      any: "Any"
+      nav:
+        dashboard: "Dashboard"
+        musicians: "Musicians"  
+        websockets: "Websockets"   
+        logout: "Logout"
+      dashboard:
+        title: "Dashboard"
+        musicians: "No musician | 1 musician | musicians" 
+      musicians:
+        create: "+ Add a new musician"
+        new: "New musician"
+        form:
+          id: "Id"
+          name: "Name"
+          band: "Band"
+        comment: "This whole CRUD section is deliberatly slowed down so you can actually see the animations. Comment out the \"slow\" method in Api::Admin::MusiciansController to use the app at full speed"     
+      confirm: "Are you sure?"
+      websockets: 
+        placeholder: "Type your message..."
+        publish: "Publish"
+        comment1: "You can also publish straight out from the Rails console:"
+        code_example: "ActionCable.server.broadcast(\"ChatChannel\", { message: \"hey!\" })"
+        comment2: "All messages are upcased"
+        server_side: " server side. "
+        comment3: "If you open up multiple tabs, you messsages will be upcased in each of these tabs"
+        waiting_messages: "Waiting for messages..."
+  activerecord:
+    attributes:        
+      user:
+        email: "Email address"
+        password: "Password"
+    errors:
+      models:
+        musician:
+          attributes:
+            name:
+              blank: "Mandatory field"
+            band:
+              blank: "Please select a band"

@@ -1,9 +1,14 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+User.create!(email: "admin@domain.com", password: "password", password_confirmation: "password")
+Musician.create!(name: "John Lennon", band: "beatles")
+Musician.create!(name: "Paul McCartney", band: "beatles")
+Musician.create!(name: "Georges Harrison", band: "beatles")
+Musician.create!(name: "Ringo Starr", band: "beatles")
+Musician.create!(name: "Mick Jagger", band: "rolling_stones")
+Musician.create!(name: "Keith Richards", band: "rolling_stones")
+Musician.create!(name: "Mick Taylor", band: "rolling_stones")
+Musician.create!(name: "Bill Wyman", band: "rolling_stones")
+Musician.create!(name: "Charlie Watts", band: "rolling_stones")
+Musician.create!(name: "Angus Young", band: "acdc")
+Musician.create!(name: "Malcom Young", band: "acdc")
+Musician.create!(name: "Bon Scott", band: "acdc")
+Musician.create!(name: "Phil Rudd", band: "acdc")
