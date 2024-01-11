@@ -1,9 +1,11 @@
 <script>
-	import { Store } from '@/front/stores/musicians'	
+	import Lnk from '@/support/lnk.svelte'
+	import { Store, Api } from '@/front/stores/musicians'	
 	export let currentRoute; 
 
 	onMount(async () => {
-		$Store.show(currentRoute.namedParams.id);
+		$Api.show(currentRoute.namedParams.id);
+		//$Appi.show(currentRoute.namedParams.id);
 	});
 </script>
 
@@ -12,7 +14,7 @@
     <h1>{ $_('home.title') }</h1>
 
      <ul class="breadcrumb">
-      <li><a href="/">{ $_('home.breadcrumb') }</a></li>
+      <li><Lnk to="root">{ $_('home.breadcrumb') }</Lnk></li>
       <li>{ $Store.musician.name }</li>
     </ul>
 

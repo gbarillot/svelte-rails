@@ -1,9 +1,17 @@
 <script>
+	import { Api } from '@/front/stores/musicians'	
+
+	const notFound = (() => {
+		$Api.show('404');   
+	})
 	const unauthorized = (() => {
-		console.log('unauthorized')
+		$Api.show('this-will-trigger-a-401');   
 	})
 	const crash = (() => {
-		console.log('crash')
+		$Api.show('this-will-trigger-a-500'); 
+	})
+	const goAdmin = (() => {
+		window.location.href = '/admin'
 	})
 </script>
 
@@ -11,13 +19,11 @@
 	<div class="page">
 		<h1>{ $_('pages.title') }</h1>
 
-		<p><a href="/dead-link">{ $_('pages.server_404') }</a></p>
+		<p><a on:click|preventDefault={notFound} href="#">{ $_('pages.server_404') }</a></p>
 		<p><a href="/dead-link">{ $_('pages.client_404') }</a></p>
-		<p><a on:click={unauthorized} href={'#'}>{ $_('pages.server_401') }</a></p>
-		<p><a on:click={crash} href="/admin">{ $_('pages.server_500') }</a></p>
+		<p><a on:click|preventDefault={unauthorized} href={'#'}>{ $_('pages.server_401') }</a></p>
+		<p><a on:click|preventDefault={crash} href="#">{ $_('pages.server_500') }</a></p>
 		<br />
-		<b><a on:click|preventDefault={
-			() => {window.location.href = '/admin'}
-			} href="/admin">{ $_('pages.admin_link') }</a></b>
+		<b><a on:click|preventDefault={goAdmin} href="/admin">{ $_('pages.admin_link') }</a></b>
 	</div>
 </section>

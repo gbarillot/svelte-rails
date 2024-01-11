@@ -1,13 +1,10 @@
 import axios from 'axios';
 
-const localePrefix = window.I18n.prefix === '' ? '' : `${window.I18n.prefix}/`;
 const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-const Api = axios.create({
-  baseURL: `${window.location.protocol}/${localePrefix}api`
-});
+const Xhr = axios.create({ baseURL: window.I18n.basePath });
 
-Api.defaults.headers.common['X-CSRF-Token'] = csrfToken;
-Api.interceptors.response.use(
+Xhr.defaults.headers.common['X-CSRF-Token'] = csrfToken;
+Xhr.interceptors.response.use(
   (response) => {
     return response;
   },
@@ -15,6 +12,9 @@ Api.interceptors.response.use(
     switch (error.response.status) {
       case 500:
         window.location.href = '/500'
+        break;
+      case 404:
+        window.location.href = '/404'
         break;
       case 401:
         alert('not authenticated')  
@@ -25,4 +25,4 @@ Api.interceptors.response.use(
   }
 );
 
-export { Api } 
+export { Xhr } 

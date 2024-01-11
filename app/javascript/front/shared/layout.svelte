@@ -1,5 +1,5 @@
 <script>
-  import { Route } from '@/front/app.svelte'
+  import { Route } from 'svelte-router-spa'
   import  Nav  from './_nav.svelte'
   import  Footer  from './_footer.svelte'
   

@@ -1,5 +1,5 @@
 <script>
-  import { Navigate } from '@/front/app.svelte'
+  import Lnk from '@/support/lnk.svelte'
   
   export let currentRoute; currentRoute;
   export let params; params;
@@ -18,8 +18,8 @@
       <div class="col-xs-8 col-sm-9">
         <nav>
           <ul>
-            <li><Navigate to="/">{ $_('nav.homepage') }</Navigate></li>
-            <li><Navigate to="/pages">{ $_('nav.pages') }</Navigate></li>
+            <li><Lnk to="root">{ $_('nav.homepage') }</Lnk></li>
+            <li><Lnk to="pages">{ $_('nav.pages') }</Lnk></li> -->
           </ul>
         </nav>
       </div>

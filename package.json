@@ -1,4 +1,5 @@
 {
+  "start": "sirv public -s",
   "dependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
     "axios": "^1.6.4",

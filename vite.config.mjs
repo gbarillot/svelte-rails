@@ -17,9 +17,9 @@ export default defineConfig({
           imports: ['_']
         },
         {
-        'axios': [
-          ['default', 'axios']
-        ]
+          'axios': [
+            ['default', 'axios']
+          ]
         }
       ]
     })

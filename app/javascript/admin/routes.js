@@ -6,16 +6,19 @@ import PageIndex from './pages/index.svelte'
 const routes = [
   {
     name: '/',
+    label: 'root',
     layout: PublicLayout,
     component: Homepage
   },
   {
     name: '/musicians/:id',
+    label: 'musician',
     layout: PublicLayout,
     component: MusicianShow
   },
   {
     name: '/pages',
+    label: 'pages',
     layout: PublicLayout,
     component: PageIndex
   }

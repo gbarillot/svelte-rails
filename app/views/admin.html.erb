@@ -15,7 +15,8 @@
     
     <script type='text/javascript'>
       I18n = {
-        prefix: '<%= I18n.locale == I18n.default_locale ? "" : "#{I18n.locale}/" %>',
+        basePath: '<%= I18n.locale == I18n.default_locale ? "/api/admin" : "/#{I18n.locale}/api/admin" %>',
+        prefix: '<%= I18n.locale == I18n.default_locale ? "admin" : "#{I18n.locale}/admin" %>',
         locale: '<%= I18n.locale %>',
         availableLocales: <%= raw(I18n.available_locales.map {|loc| loc.to_s}) %>
       }

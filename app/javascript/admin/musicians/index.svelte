@@ -1,6 +1,6 @@
 <script>
+	import Lnk from '@/support/lnk.svelte'
 	import { Store } from '@/front/stores/musicians'	
-	export let currentRoute; 
 
 	onMount(async () => {
 		$Store.index();
@@ -13,12 +13,12 @@
 
     <ul class="breadcrumb">
       <li><span>{ $_('home.breadcrumb') }</span></li>
-    </ul>
+    </ul>	
 
     <div class="row">
 			{#each $Store.musicians as {id, name}}
 				<div class="col-xs-12 col-md-3 card">
-					<p><a href={ `/musicians/${id}` }>{ name }</a></p>
+					<p><Lnk to='musician' params={{id: id}} attrs={{class: "active"}} data={{drag: true, is: 'draggable'}}>{ name }</Lnk></p>
 				</div>
 			{/each}
     </div>

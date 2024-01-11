@@ -1,15 +1,17 @@
-import { Api } from '@/support/api.js'
+import { Xhr } from '@/support/xhr.js'
 
-export const Store = writable({
+const Store = writable({
   musicians: [],
   musician: {
     id: null,
     name: '',
     band: ''
-  },
+  }
+});
 
+const Api = readable({
   index: async () => {  
-    await Api.get(`/musicians`).then((response) => {
+    await Xhr.get(`/musicians`).then((response) => {
       Store.update((storeData) => {
         storeData.musicians = response.data.musicians;
         return storeData;
@@ -17,12 +19,14 @@ export const Store = writable({
     })
   },
   show: async (id) => {
-    await Api.get(`/musicians/${id}`).then((response) => {
+    await Xhr.get(`/musicians/${id}`).then((response) => {
       Store.update((storeData) => {
         storeData.musician = response.data.musician;
         return storeData;
       });
     })
   }
-});
+})
+
+export { Store, Api }
 
