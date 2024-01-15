@@ -16,7 +16,7 @@
 </script>
 
 <section class="ffilters">
-  <a href="#/"  class="openable">{ $_('filter') }</a>
+  <a href="#/" class="openable">{ $_('filter') }</a>
 
   <form on:submit|preventDefault={submitForm} ref="filters" accept-charset="UTF-8" class="card ">  
     <div class="row">      
@@ -28,7 +28,7 @@
       <div class="col-xs-12 col-md-6 col-xl-4">     
         <label for="band">{ $_('musicians.form.band') }</label> 
         <select id="band">
-          <option value="null">{ $_('any') }</option>
+          <option value="">{ $_('any') }</option>
           {#each bands as band}
             <option value={band.key}>{ band.name }</option>
           {/each}

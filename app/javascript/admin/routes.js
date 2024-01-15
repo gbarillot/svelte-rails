@@ -1,7 +1,7 @@
 import Dashboard from './dashboard/index.svelte'
 import MusicianIndex from './musicians/index.svelte'
 import MusicianNew from './musicians/new.svelte'
-import MusicianShow from './musicians/show.svelte'
+import MusicianEdit from './musicians/edit.svelte'
 import WebsocketIndex from './websockets/index.svelte'
 
 const routes = [
@@ -23,7 +23,7 @@ const routes = [
   {
     path: '/musicians/:id',
     name: 'musician',
-    component: MusicianShow
+    component: MusicianEdit
   },
   {
     path: '/websockets',

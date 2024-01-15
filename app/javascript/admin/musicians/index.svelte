@@ -4,7 +4,6 @@
 	import  Filters  from './_filters.svelte'	
 
 	onMount(() => {
-		//console.log();
 		$Api.index($router.fullPath);
 	});
 </script>
