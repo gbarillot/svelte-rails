@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource) 
-    admin_root_path
+    "#{admin_root_path}/"
   end
 
   private

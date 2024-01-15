@@ -1,28 +1,34 @@
-import { Api } from '@/support/api.js'
+import { Xhr } from '@/support/xhr.js'
 
-export const Store = writable({
+const Store = writable({
+  progress: '',
+  errors: {},
+  bands: [],
+  musician: {},
   musicians: [],
-  musician: {
-    id: null,
-    name: '',
-    band: ''
-  },
+  pagination: {}
+});
 
-  index: async () => {  
-    await Api.get(`/musicians`).then((response) => {
+const Api = readable({
+  index: async (fullPath) => {  
+    await Xhr.get(fullPath).then((response) => {
       Store.update((storeData) => {
         storeData.musicians = response.data.musicians;
+        storeData.bands = response.data.bands;
+        storeData.pagination = response.data.pagination;
         return storeData;
       });
     })
   },
   show: async (id) => {
-    await Api.get(`/musicians/${id}`).then((response) => {
+    await Xhr.get(`/musicians/${id}`).then((response) => {
       Store.update((storeData) => {
         storeData.musician = response.data.musician;
         return storeData;
       });
     })
   }
-});
+})
+
+export { Store, Api }
 

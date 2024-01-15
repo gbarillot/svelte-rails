@@ -1,14 +1,12 @@
 <script>
-  import Lnk from '@/support/lnk.svelte'
-  
-  export let currentRoute; currentRoute;
-  export let params; params;
+  import { router, Link } from '@gbarillot/svelte-router'
 
   let selected = I18n.locale;
   const setLocale = ((e) => {
+    console.log($router)
     window.location.href = e.target.value === I18n.availableLocales[0] 
-                         ? currentRoute.name 
-                         : `/${e.target.value}${currentRoute.name}`
+                         ? $router.path 
+                         : `/${e.target.value}${$router.path}`
   })
 </script>
 
@@ -18,8 +16,8 @@
       <div class="col-xs-8 col-sm-9">
         <nav>
           <ul>
-            <li><Lnk to="root">{ $_('nav.homepage') }</Lnk></li>
-            <li><Lnk to="pages">{ $_('nav.pages') }</Lnk></li>
+            <li><Link to="root">{ $_('nav.homepage') }</Link></li>
+            <li><Link to="pages">{ $_('nav.pages') }</Link></li>
           </ul>
         </nav>
       </div>

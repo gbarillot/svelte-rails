@@ -1,11 +1,9 @@
 <script>
-	import Lnk from '@/support/lnk.svelte'
+	import { router, Link } from '@gbarillot/svelte-router'
 	import { Store, Api } from '@/front/stores/musicians'	
-	export let currentRoute; 
 
 	onMount(async () => {
-		$Api.show(currentRoute.namedParams.id);
-		//$Appi.show(currentRoute.namedParams.id);
+		$Api.show($router.params.id);
 	});
 </script>
 
@@ -14,7 +12,7 @@
     <h1>{ $_('home.title') }</h1>
 
      <ul class="breadcrumb">
-      <li><Lnk to="root">{ $_('home.breadcrumb') }</Lnk></li>
+      <li><Link to="root" params={{id: 123}} attrs={{class: 'one two'}}>{ $_('home.breadcrumb') }</Link></li>
       <li>{ $Store.musician.name }</li>
     </ul>
 

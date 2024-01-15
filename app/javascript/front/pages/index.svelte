@@ -1,6 +1,7 @@
 <script>
 	import { Api } from '@/front/stores/musicians'	
-
+	import { Link } from '@gbarillot/svelte-router'
+	
 	const notFound = (() => {
 		$Api.show('404');   
 	})
@@ -11,7 +12,7 @@
 		$Api.show('this-will-trigger-a-500'); 
 	})
 	const goAdmin = (() => {
-		window.location.href = '/admin'
+		window.location.href = '/admin/'
 	})
 </script>
 
@@ -24,6 +25,6 @@
 		<p><a on:click|preventDefault={unauthorized} href={'#'}>{ $_('pages.server_401') }</a></p>
 		<p><a on:click|preventDefault={crash} href="#">{ $_('pages.server_500') }</a></p>
 		<br />
-		<b><a on:click|preventDefault={goAdmin} href="/admin">{ $_('pages.admin_link') }</a></b>
+		<b><a on:click|preventDefault={goAdmin} href="{window.I18n.prefix + '/admin/'}">{ $_('pages.admin_link') }</a></b>
 	</div>
 </section>

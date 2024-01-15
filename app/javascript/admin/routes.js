@@ -1,27 +1,35 @@
-import PublicLayout from './shared/layout.svelte'
-import Homepage from './musicians/index.svelte'
+import Dashboard from './dashboard/index.svelte'
+import MusicianIndex from './musicians/index.svelte'
+import MusicianNew from './musicians/new.svelte'
 import MusicianShow from './musicians/show.svelte'
-import PageIndex from './pages/index.svelte'
+import WebsocketIndex from './websockets/index.svelte'
 
 const routes = [
   {
-    name: '/',
-    label: 'root',
-    layout: PublicLayout,
-    component: Homepage
+    path: '/',
+    name: 'root',
+    component: Dashboard
   },
   {
-    name: '/musicians/:id',
-    label: 'musician',
-    layout: PublicLayout,
+    path: '/musicians',
+    name: 'musicians',
+    component: MusicianIndex
+  },
+  {
+    path: '/musicians/new',
+    name: 'new_musician',
+    component: MusicianNew
+  },
+  {
+    path: '/musicians/:id',
+    name: 'musician',
     component: MusicianShow
   },
   {
-    name: '/pages',
-    label: 'pages',
-    layout: PublicLayout,
-    component: PageIndex
-  }
+    path: '/websockets',
+    name: 'websockets',
+    component: WebsocketIndex
+  },
 ]
 
 export { routes }

@@ -1,5 +1,5 @@
 <script>
-	import Lnk from '@/support/lnk.svelte'
+	import { Link } from '@gbarillot/svelte-router'
 	import { Store, Api } from '@/front/stores/musicians'	
 
 	onMount(async () => {
@@ -18,7 +18,7 @@
     <div class="row">
 			{#each $Store.musicians as {id, name}}
 				<div class="col-xs-12 col-md-3 card">
-					<p><Lnk to="musician" params={{id: id}}>{ name }</Lnk></p>
+					<p><Link to="musician" params={{id: id}}>{ name }</Link></p>
 				</div>
 			{/each}
     </div>

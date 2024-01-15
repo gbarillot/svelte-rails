@@ -1,26 +1,52 @@
 <script>
-	import Lnk from '@/support/lnk.svelte'
-	import { Store } from '@/front/stores/musicians'	
+	import { router, Link } from '@gbarillot/svelte-router'
+	import { Api, Store } from '@/admin/stores/musicians'	
+	import  Filters  from './_filters.svelte'	
 
-	onMount(async () => {
-		$Store.index();
+	onMount(() => {
+		//console.log();
+		$Api.index($router.fullPath);
 	});
 </script>
 
-<div class="container">
-  <section class="container">
-    <h1>{ $_('home.title') } ADMIN</h1>
+<section class="container">
+	<div class="row">
+		<div class="col-xs-12 col-lg-8 col-xl-9">      
+			<ul class="breadcrumb">
+				<li><Link to="root">{ $_('title') }</Link></li>
+				<li>{ $_('nav.musicians') }</li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-lg-4 col-xl-3 ta-right">
+			<Link to="new_musician" role="button" class="outline" style="width: 100%">{ $_('musicians.create') }</Link> 
+		</div>
+	</div>
 
-    <ul class="breadcrumb">
-      <li><span>{ $_('home.breadcrumb') }</span></li>
-    </ul>	
+	<Filters bands={$Store.bands} />
 
-    <div class="row">
-			{#each $Store.musicians as {id, name}}
-				<div class="col-xs-12 col-md-3 card">
-					<p><Lnk to='musician' params={{id: id}} attrs={{class: "active"}} data={{drag: true, is: 'draggable'}}>{ name }</Lnk></p>
-				</div>
-			{/each}
-    </div>
-  </section>
-</div>
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<th>{ $_('musicians.form.id') }</th>
+					<th>{ $_('musicians.form.name') }</th>
+					<th>{ $_('musicians.form.band') }</th>
+				</tr>
+			</thead>
+			<tbody>
+				{#each $Store.musicians as musician}
+				<tr>
+					<td><Link to="musician", params={{id: musician.id}}>{ musician.id }</Link></td>
+					<td><Link to="musician", params={{id: musician.id}}>{ musician.name }</Link></td>
+					<td><Link to="musician", params={{id: musician.id}}>{ musician.band }</Link></td>
+				</tr>
+				{/each}
+			</tbody>
+		</table>
+		<!-- <div v-else>
+			<h3 class="card ta-center">{ $t('no_result') }</h3>
+		</div> -->
+
+		<!-- <pagination v-if="store.pagination" :store="store" @clicked="index"></pagination> -->
+	</div>
+</section>
