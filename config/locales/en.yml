@@ -10,7 +10,7 @@ en:
     sign_in: "Sign in"
   vue:
     front:
-      title: "Front end"
+      title: "Front end"      
       nav:
         homepage: "Home"
         pages: "Pages"
@@ -47,7 +47,7 @@ en:
         logout: "Logout"
       dashboard:
         title: "Dashboard"
-        musicians: "No musician | 1 musician | musicians" 
+        musicians: "{n, plural, =0 {No musician} one {One musician} other {# musicians}}"
       musicians:
         create: "+ Add a new musician"
         new: "New musician"

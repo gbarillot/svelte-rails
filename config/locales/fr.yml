@@ -47,7 +47,7 @@ fr:
         logout: "Déconnection"
       dashboard:
         title: "Dashboard"
-        musicians: "Aucun musician | Un musicien | musiciens" 
+        musicians: "{n, plural, =0 {Aucun musicien} one {Un musicien} other {# musicians}}" 
       musicians:
         create: "+ Ajouter un musicien"
         new: "Nouveau musicien"        

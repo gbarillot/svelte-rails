@@ -1,5 +1,5 @@
 <script>
-	import { Api } from '@/admin/stores/dashboard'	
+	import { Store, Api } from '@/admin/stores/dashboard'		
 	import { Link } from '@gbarillot/svelte-router'
 	
 	onMount(async () => {
@@ -39,11 +39,11 @@
 		</div>
 		<div class="col-xs-12 col-md-3 card">
 			<h3>I18n</h3>
-			<!-- <p><a href="https://kazupon.github.io/vue-i18n/" target="_blank">
-				{{ $t('dashboard.musicians', 0) }}, 
-				{{ $t('dashboard.musicians', 1) }}, 
-				{{ store.metrics.musicians + ' ' + $t('dashboard.musicians', store.metrics.musicians) }}</a>
-			</p>  -->
+			<p><a href="https://kazupon.github.io/vue-i18n/" target="_blank">
+				{ $_('dashboard.musicians', {values: { n: 0 }}) }, 
+				{ $_('dashboard.musicians', {values: { n: 1 }}) }, 
+				{ $_('dashboard.musicians', {values: { n: $Store.metrics.musicians }}) }</a>
+			</p>
 		</div>
 		<div class="col-xs-12 col-md-3 card">
 			<h3>ActionCable</h3>
