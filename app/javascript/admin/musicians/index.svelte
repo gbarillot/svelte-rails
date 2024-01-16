@@ -3,8 +3,14 @@
 	import { Api, Store } from '@/admin/stores/musicians'	
 	import  Filters  from './_filters.svelte'	
 
-	onMount(() => {
+	function load() {
 		$Api.index($router.fullPath);
+	}
+	function filter() {
+		load();
+	}
+	onMount(() => {
+		load();
 	});
 </script>
 
@@ -21,7 +27,7 @@
 		</div>
 	</div>
 
-	<Filters bands={$Store.bands} />
+	<Filters bands={$Store.bands} callback={filter}/>
 
 	<div>
 		<table>

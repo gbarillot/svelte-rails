@@ -1,7 +1,9 @@
 <script>
   import { router } from '@gbarillot/svelte-router'
 
+  export let callback;
   export let bands;  
+  export let dropped = false;
   export let form = {
     name_cont: ''
   }  
@@ -12,13 +14,14 @@
     );
 
     router.push($router.path, {query: query});
+    callback();
   }
 </script>
 
 <section class="ffilters">
-  <a href="#/" class="openable">{ $_('filter') }</a>
+  <a href="#/" class="openable" on:click={() => dropped = !dropped} class:open={dropped}>{ $_('filter') }</a>
 
-  <form on:submit|preventDefault={submitForm} ref="filters" accept-charset="UTF-8" class="card ">  
+  <form on:submit|preventDefault={submitForm} ref="filters" accept-charset="UTF-8" class="card " class:hidden={!dropped}>  
     <div class="row">      
       <div class="col-xs-12 col-md-6 col-xl-5"> 
         <label for="name">{ $_('musicians.form.name') }</label>    
