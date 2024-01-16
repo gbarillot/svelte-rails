@@ -1,31 +1,36 @@
 <script>
 	import { router, Link } from '@gbarillot/svelte-router'
-	import { Store, Api } from '@/front/stores/musicians'	
+	import { Store, Api } from '@/admin/stores/musicians'	
+	import MusicianForm from './_form.svelte'	
 
-	onMount(async () => {
-		$Api.show($router.params.id);
+	function create() {
+		$Api.create();
+	}
+	onMount(() => {
+		$Api.new();
 	});
 </script>
 
-<div class="container">
-  <section class="container">
-    <h1>{ $_('home.title') }</h1>
+<section class="container">
+	<ul class="breadcrumb">
+		<li><Link to="root">{ $_('title') }</Link></li>
+		<li><Link to="musicians">{ $_('nav.musicians') }</Link></li>
+		<li><span>{ $_('musicians.new') }</span></li>
+	</ul>
 
-     <ul class="breadcrumb">
-      <li><Link to="root" params={{id: 123}} attrs={{class: 'one two'}}>{ $_('home.breadcrumb') }</Link></li>
-      <li>{ $Store.musician.name }</li>
-    </ul>
+	<form on:submit|preventDefault={create} class="card" class:loading={$Store.progress === 'loading'}>
+		<MusicianForm musician={$Store.musician} bands={$Store.bands} errors={$Store.errors} /> 
 
-		<div class="page">
-			<h2>{ $_('musicians.title') }</h2>
-			{#if $Store.musician.id != null}
-				<p>
-					<b>{ $_('musicians.id') }:</b> { $Store.musician.id }<br />
-					<b>{ $_('musicians.name') }:</b> { $Store.musician.name }<br /> 
-					<b>{ $_('musicians.band') }:</b> { $Store.musician.band }
-				</p>
-			{/if}
+		<div class="row">
+			<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ta-right">
+				<input type="submit" value={ $_('save') } />      
+			</div>
 		</div>
-		
-  </section>
-</div>
+	</form> 
+
+	<div class="row">
+		<div class="col-xs-12">
+			<p>{ $_('musicians.comment') }</p>
+		</div>
+	</div>
+</section>

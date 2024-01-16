@@ -17,7 +17,7 @@
 			</ul>
 		</div>
 		<div class="col-xs-12 col-lg-4 col-xl-3 ta-right">
-			<Link to="new_musician" role="button" class="outline" style="width: 100%">{ $_('musicians.create') }</Link> 
+			<Link to="new_musician" attrs={{class: "outline", role: "button", style: "width: 100%"}}>{ $_('musicians.create') }</Link> 
 		</div>
 	</div>
 

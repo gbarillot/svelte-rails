@@ -1,7 +1,9 @@
 json.musician do
   json.name @musician.name
-  json.bands Musician.bands.each do |name, _|
-    json.key name
-    json.name t(name, scope: 'bands')
-  end
+  json.band '' 
+end
+
+json.bands Musician.bands.each do |name, _|
+  json.key name
+  json.name t(name, scope: 'bands')
 end

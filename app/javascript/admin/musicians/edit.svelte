@@ -7,7 +7,7 @@
 		$Api.update($router.params.id);
 	}
 	function destroy() {
-		console.log('destroy')
+		$Api.destroy($router.params.id);
 	}
 	onMount(() => {
 		$Api.edit($router.params.id);

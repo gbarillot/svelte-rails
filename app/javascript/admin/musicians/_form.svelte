@@ -15,7 +15,7 @@
 <fieldset>
   <label for="bands">{ $_('musicians.form.band') }</label>
   <Errors attr="band" errors={errors} />
-  <select id="bands">
+  <select id="bands" bind:value={musician.band}>
     {#each bands as band}
       <option value={band.key}>{ band.name }</option>
     {/each}

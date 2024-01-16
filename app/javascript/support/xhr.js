@@ -14,7 +14,7 @@ Xhr.interceptors.response.use(
         //window.location.href = '/500'
         break;
       case 404:
-        window.location.href = '/404'
+        //window.location.href = '/404'
         break;
       case 401:
         alert('not authenticated')  
