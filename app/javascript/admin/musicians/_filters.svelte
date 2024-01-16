@@ -8,6 +8,11 @@
     name_cont: ''
   }  
 
+  function reset() {
+    router.push($router.path);
+    callback();
+  }
+
   function submitForm() {
     const query = Object.fromEntries(
       Object.entries(form).map(entry => [`q[${entry[0]}]`, entry[1]])
@@ -19,7 +24,7 @@
 </script>
 
 <section class="ffilters">
-  <a href="#/" class="openable" on:click={() => dropped = !dropped} class:open={dropped}>{ $_('filter') }</a>
+  <a href="#/" class="openable" on:click|preventDefault={() => dropped = !dropped} class:open={dropped}>{ $_('filter') }</a>
 
   <form on:submit|preventDefault={submitForm} ref="filters" accept-charset="UTF-8" class="card " class:hidden={!dropped}>  
     <div class="row">      
@@ -43,7 +48,7 @@
         <input type="submit" id="btn" class="button button-primary" value={$_('filter')}>
       </div>
       <div class="col-xs-12 col-md-5">
-        <a  href="#/" class="secondary outline fill">{ $_('reset_filters') }</a>
+        <a on:click|preventDefault={reset} href="#/" class="secondary outline fill">{ $_('reset_filters') }</a>
       </div> 
     </div>
   </form>

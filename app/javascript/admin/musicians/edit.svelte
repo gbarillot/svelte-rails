@@ -3,6 +3,8 @@
 	import { Store, Api } from '@/admin/stores/musicians'	
 	import MusicianForm from './_form.svelte'	
 
+	//console.log($router);
+
 	function update() {
 		$Api.update($router.params.id);
 	}
