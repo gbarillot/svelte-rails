@@ -5,8 +5,13 @@
   export let bands;  
   export let dropped = false;
   export let form = {
-    name_cont: ''
+    name_cont: init('q[name_cont]'),
+    band_eq: init('q[band_eq]')
   }  
+
+  function init(key) {
+    return $router.query[key] ? $router.query[key] : ''
+  }
 
   function reset() {
     router.push($router.path);
@@ -35,7 +40,7 @@
   
       <div class="col-xs-12 col-md-6 col-xl-4">     
         <label for="band">{ $_('musicians.form.band') }</label> 
-        <select id="band">
+        <select id="band" bind:value={form.band_eq}>
           <option value="">{ $_('any') }</option>
           {#each bands as band}
             <option value={band.key}>{ band.name }</option>
