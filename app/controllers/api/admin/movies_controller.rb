@@ -1,6 +1,6 @@
 class Api::Admin::MoviesController < Api::Admin::AdminController
   # DELETE ME: Dummy emulation of a slow network so you can see the UI animation in dev. mode
-  before_action :slow, only: [:create, :update] 
+  #before_action :slow, only: [:create, :update] 
   before_action :load_movie, except: [:index, :new, :create]  
 
   def index
@@ -18,6 +18,8 @@ class Api::Admin::MoviesController < Api::Admin::AdminController
     @movie = Movie.create(movie_params)
 
     if @movie.errors.empty?
+      @movie.attach_file!(params[:poster], :poster)
+      
       render template: '/api/admin/movies/edit'
     else
       render json: {errors: @movie.errors.messages}.to_json, status: 422      
@@ -29,6 +31,7 @@ class Api::Admin::MoviesController < Api::Admin::AdminController
 
   def update
     if @movie.update(movie_params)
+      @movie.attach_file!(params[:poster], :poster)
       head :ok
     else
       render json: {errors: @movie.errors.messages}.to_json, status: 422

@@ -29,10 +29,10 @@
 
 	<div>
 		{#if $Store.movies.length > 0}
-			<table>
+			<table class="table movies">
 				<thead>
 					<tr>
-						<th>{ $_('movies.form.id') }</th>
+						<th style="width: 100px">{ $_('movies.form.id') }</th>
 						<th>{ $_('movies.form.name') }</th>
 						<th>{ $_('movies.form.genre') }</th>
 					</tr>
@@ -40,7 +40,11 @@
 				<tbody>
 					{#each $Store.movies as movie}
 						<tr>
-							<td><Link to="edit_movie", params={{id: movie.id}}>{ movie.id }</Link></td>
+							<td>
+								<Link to="edit_movie", params={{id: movie.id}}>
+									<img src={ movie.poster_url } />
+								</Link>
+							</td>
 							<td><Link to="edit_movie", params={{id: movie.id}}>{ movie.name }</Link></td>
 							<td><Link to="edit_movie", params={{id: movie.id}}>{ movie.genre }</Link></td>
 						</tr>

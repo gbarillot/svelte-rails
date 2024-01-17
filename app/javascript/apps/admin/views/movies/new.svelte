@@ -11,7 +11,7 @@
 	});
 </script>
 
-<section class="container">
+<section class="container movies">
 	<ul class="breadcrumb">
 		<li><Link to="root">{ $_('title') }</Link></li>
 		<li><Link to="movies">{ $_('nav.movies') }</Link></li>

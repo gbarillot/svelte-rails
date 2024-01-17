@@ -7,6 +7,7 @@ json.movie do
   json.restricted "#{@movie.restricted}"
   json.rating @movie.rating
   json.genre_id @movie.genre.id
+  json.poster_url @movie.poster.present? ? ActiveStorage::Blob.service.path_for(@movie.poster.key).split('/public').last : ''
 end
 
 json.genres Genre.all.each do |genre|
