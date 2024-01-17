@@ -3,7 +3,6 @@
 
   let selected = I18n.locale;
   const setLocale = ((e) => {
-    console.log($router)
     window.location.href = e.target.value === I18n.availableLocales[0] 
                          ? $router.path 
                          : `/${e.target.value}${$router.path}`

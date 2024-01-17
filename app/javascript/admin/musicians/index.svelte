@@ -5,7 +5,6 @@
 	import  Pagination  from '../shared/_pagination.svelte'	
 
 	function load() {
-		console.log('load')
 		$Api.index($router.fullPath);
 	}
 	function filter() {
