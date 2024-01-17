@@ -101,3 +101,12 @@ footer {
     }
   }
 }
+
+.preview {
+  width: 80%;
+  min-height: 200px;
+  border: 1px solid red;
+  .img[src=""] {
+    display: none !important;
+  }
+}

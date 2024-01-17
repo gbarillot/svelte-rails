@@ -32,7 +32,7 @@
       }
       fieldset:last-child {
         text-align: right;
-        grid-column-start: 11;
+        grid-column-start: 9;
         grid-column-end: 13;
         label {
           padding-bottom: 10px;
@@ -46,6 +46,38 @@
           padding-bottom: 20px;
         }
       }
-    }    
+    }  
+  }
+  .uploader {
+    .preview {
+      width: 100%;
+      min-height: 200px;
+      border: 1px solid var(--light-text-color);
+      display: block;
+      position: relative;
+      span {
+        position: absolute;
+        display: block;
+        top: 0;        
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        padding: 20px;
+        padding-top: 20%;
+        font-size: 25px;       
+      }
+      img {
+        width: 100%;
+      }
+    }
+    input {
+      opacity: 0
+    }
+  }
+}
+.table.movies {
+  img {
+    width: 100px;
   }
 }
