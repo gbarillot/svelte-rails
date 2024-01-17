@@ -1,6 +1,6 @@
 <script>
 	import { router, Link } from '@gbarillot/svelte-router'
-	import Chat from '../stores/chat';
+	import Chat from '../../stores/chat';
 
 	export let message = '';
 

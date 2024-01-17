@@ -1,0 +1,51 @@
+.movies {
+  form {
+    .row.slider-rating {
+      fieldset {
+        grid-column-start: 1;
+        grid-column-end: 8;
+        input {
+          width: 100%;
+        }
+      }
+      b {
+        display: inline-block;
+        vertical-align: middle;
+        background-color: var(--body-bg);
+        text-align: center;
+        grid-column-start: 11;
+        grid-column-end: 13;
+        font-size: 2rem;
+        padding-top: 14px;
+      }
+    }
+    .row.release-restricted {
+      margin-top: 20px;
+      fieldset:first-child {
+        grid-column-start: span 4;
+        @media(max-width: 575px) {
+          grid-column-start: 1;
+          grid-column-end: 13;
+          text-align:left;
+          padding-bottom: 20px;
+        }
+      }
+      fieldset:last-child {
+        text-align: right;
+        grid-column-start: 11;
+        grid-column-end: 13;
+        label {
+          padding-bottom: 10px;
+        }
+        @media(max-width: 991px) {
+          grid-column-start: 5;
+        }
+        @media(max-width: 575px) {
+          grid-column-start: 1;
+          text-align:left;
+          padding-bottom: 20px;
+        }
+      }
+    }    
+  }
+}

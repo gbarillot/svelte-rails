@@ -1,8 +1,8 @@
-import MovieIndex from './movies/index.svelte'
-import MovieNew from './movies/new.svelte'
-import MovieEdit from './movies/edit.svelte'
-import ToolingIndex from './tooling/index.svelte'
-import WebsocketIndex from './websockets/index.svelte'
+import MovieIndex from './views/movies/index.svelte'
+import MovieNew from './views/movies/new.svelte'
+import MovieEdit from './views/movies/edit.svelte'
+import ToolingIndex from './views/tooling/index.svelte'
+import WebsocketIndex from './views/websockets/index.svelte'
 
 const routes = [
   {

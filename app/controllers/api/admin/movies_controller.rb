@@ -1,6 +1,6 @@
 class Api::Admin::MoviesController < Api::Admin::AdminController
   # DELETE ME: Dummy emulation of a slow network so you can see the UI animation in dev. mode
-  #before_action :slow, only: [:create, :update] 
+  before_action :slow, only: [:create, :update] 
   before_action :load_movie, except: [:index, :new, :create]  
 
   def index
@@ -49,6 +49,9 @@ class Api::Admin::MoviesController < Api::Admin::AdminController
     params.require(:movie).permit(
       :name,
       :description,
+      :rating,
+      :restricted,
+      :released_at,
       :genre_id
     )
   end

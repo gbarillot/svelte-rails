@@ -13,7 +13,8 @@ en:
       title: "Front end"      
       nav:
         homepage: "Home"
-        pages: "Pages"
+        routing: "Routing"
+        admin: "Admin"
       home:
         title: "Movies"
         breadcrumb: "All movies"        
@@ -56,6 +57,10 @@ en:
           name: "Name"
           description: "Description"
           genre: "Genre"
+          rating: "Rating"
+          restricted: "Restricted"
+          poster: "Poster"
+          release_date: "Release date"
         comment: "This form is deliberatly slowed down so you can actually see the animations. Comment out the \"slow\" method in Api::Admin::MoviesController to use the app at full speed"     
       confirm: "Are you sure?"
       websockets: 

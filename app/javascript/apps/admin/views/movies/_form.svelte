@@ -26,4 +26,25 @@
       <option value={genre.id}>{ genre.name }</option>
     {/each}
   </select>
-</fieldset>   
+</fieldset>  
+
+<div class="row slider-rating">
+  <fieldset>
+    <label for="rating">{ $_('movies.form.rating') }</label>
+    <input id="rating" type="range" min="1" max="5" bind:value={movie.rating} />    
+  </fieldset>  
+  <b>{ movie.rating} </b>
+</div>
+
+<div class="row release-restricted">
+  <fieldset>
+    <label for="release">{ $_('movies.form.release_date') }</label>
+    <input id="release" type="date" bind:value={movie.released_at} />
+  </fieldset> 
+
+  <fieldset class="">
+    <label for="restricted">{ $_('movies.form.restricted') }</label>
+    <input type="radio" bind:group={movie.restricted} value="true" />Yes
+    <input type="radio" bind:group={movie.restricted} value="false" />No
+  </fieldset>  
+</div>

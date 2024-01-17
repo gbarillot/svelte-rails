@@ -6,7 +6,7 @@ const Store = writable({
 
 const Api = readable({
   index: async () => {  
-    await Xhr.get(`/dashboard`).then((response) => {
+    await Xhr.get(`/tooling`).then((response) => {
       Store.update((storeData) => {
         storeData.metrics = response.data.metrics;
         return storeData;

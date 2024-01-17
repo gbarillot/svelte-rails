@@ -1,16 +1,11 @@
 <script>
 	import { router, Link } from '@gbarillot/svelte-router'
-	import { Api, Store } from '../stores/movies'	
+	import { Api, Store } from '../../stores/movies'	
 	import  Filters  from './_filters.svelte'	
 	import  Pagination  from '../shared/_pagination.svelte'	
 
 	function load() {
-		console.log('reload');
-
 		$Api.index($router.fullPath);
-	}
-	function filter() {
-		load();
 	}
 	onMount(() => {
 		load();
@@ -30,24 +25,24 @@
 		</div>
 	</div>
 
-	<Filters bands={$Store.genres} callback={filter} />
+	<Filters bands={$Store.genres} callback={load} />
 
 	<div>
 		{#if $Store.movies.length > 0}
 			<table>
 				<thead>
 					<tr>
-						<th>{ $_('musicians.form.id') }</th>
-						<th>{ $_('musicians.form.name') }</th>
-						<th>{ $_('musicians.form.band') }</th>
+						<th>{ $_('movies.form.id') }</th>
+						<th>{ $_('movies.form.name') }</th>
+						<th>{ $_('movies.form.genre') }</th>
 					</tr>
 				</thead>
 				<tbody>
 					{#each $Store.movies as movie}
 						<tr>
 							<td><Link to="edit_movie", params={{id: movie.id}}>{ movie.id }</Link></td>
-							<!-- <td><Link to="edit_movie", params={{id: movie.id}}>{ movie.name }</Link></td>
-							<td><Link to="edit_movie", params={{id: movie.id}}>{ movie.genre }</Link></td> -->
+							<td><Link to="edit_movie", params={{id: movie.id}}>{ movie.name }</Link></td>
+							<td><Link to="edit_movie", params={{id: movie.id}}>{ movie.genre }</Link></td>
 						</tr>
 					{/each}
 				</tbody>

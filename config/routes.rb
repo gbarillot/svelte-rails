@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       resources :movies, only: [:index, :show]
 
       namespace :admin do
-        resources :dashboard, only: :index
+        resources :tooling, only: :index
         resources :movies, except: :show
       end
     end

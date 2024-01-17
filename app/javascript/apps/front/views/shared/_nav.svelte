@@ -7,6 +7,9 @@
                          ? $router.path 
                          : `/${e.target.value}${$router.path}`
   })
+	const goAdmin = (() => {
+		window.location.href = '/admin/'
+	})
 </script>
 
 <section class="top-nav">
@@ -16,7 +19,8 @@
         <nav>
           <ul>
             <li><Link to="root">{ $_('nav.homepage') }</Link></li>
-            <li><Link to="pages">{ $_('nav.pages') }</Link></li>
+            <li><Link to="pages">{ $_('nav.routing') }</Link></li>
+            <li><a on:click|preventDefault={goAdmin} href="{window.I18n.prefix + '/admin/'}">{ $_('nav.admin') }</a></li>
           </ul>
         </nav>
       </div>

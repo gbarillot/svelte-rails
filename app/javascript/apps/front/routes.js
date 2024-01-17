@@ -1,6 +1,6 @@
-import Homepage from './movies/index.svelte'
-import MovieShow from './movies/show.svelte'
-import PageIndex from './pages/index.svelte'
+import Homepage from './views/movies/index.svelte'
+import MovieShow from './views/movies/show.svelte'
+import PageIndex from './views/pages/index.svelte'
 
 const routes = [
   {

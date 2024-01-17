@@ -2,17 +2,15 @@
 	import { router, Link } from '@gbarillot/svelte-router'
 	import { Store, Api } from '@/apps/front/stores/movies'	
 
-	onMount(async () => {
+	onMount(() => {
 		$Api.show($router.params.id);
 	});
 </script>
 
 <div class="container">
   <section class="container">
-    <h1>{ $_('home.title') }</h1>
-
-     <ul class="breadcrumb">
-      <li><Link to="root" params={{id: 123}} attrs={{class: 'one two'}}>{ $_('home.breadcrumb') }</Link></li>
+    <ul class="breadcrumb">
+      <li><Link to="root">{ $_('home.breadcrumb') }</Link></li>
       <li>{ $Store.movie.name }</li>
     </ul>
 

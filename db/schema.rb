@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_17_091753) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_17_140844) do
   create_table "genres", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,6 +24,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_091753) do
     t.text "description"
     t.integer "genre_id"
     t.integer "rating"
+    t.date "released_at"
+    t.boolean "restricted", default: false
   end
 
   create_table "musicians", force: :cascade do |t|
