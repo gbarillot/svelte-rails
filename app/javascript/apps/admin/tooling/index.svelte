@@ -1,5 +1,5 @@
 <script>
-	import { Store, Api } from '../stores/dashboard'		
+	import { Store, Api } from '../stores/tooling'		
 	import { Link } from '@gbarillot/svelte-router'
 	
 	onMount(async () => {

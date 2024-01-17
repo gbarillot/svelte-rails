@@ -41,12 +41,12 @@ en:
       no_result: "No result :-/"
       any: "Any"
       nav:
-        dashboard: "Dashboard"
+        home: "Tooling"
         movies: "Movies"  
         websockets: "Websockets"   
         logout: "Logout"
-      dashboard:
-        title: "Dashboard"
+      homepage:
+        title: "Tooling"
         movies: "{n, plural, =0 {No movie} one {One movie} other {# movies}}"
       movies:
         create: "+ Add a new movie"

@@ -6,5 +6,5 @@ end
 
 json.genres Genre.all.each do |genre|
   json.id genre.id
-  json.name t(genre.name, scope: 'genres')
+  json.name genre.name
 end

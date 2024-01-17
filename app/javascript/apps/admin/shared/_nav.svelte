@@ -20,7 +20,7 @@
         <nav>
           <ul>
             <li class="{activeOn(['root'])}">
-              <Link to="root">{ $_('nav.dashboard') }</Link>
+              <Link to="root">{ $_('nav.home') }</Link>
             </li>
             <li class="{activeOn(['musicians', 'edit_musician', 'new_musician'])}">
               <Link to="movies">{ $_('nav.movies') }</Link>

@@ -5,6 +5,8 @@
 	import  Pagination  from '../shared/_pagination.svelte'	
 
 	function load() {
+		console.log('reload');
+
 		$Api.index($router.fullPath);
 	}
 	function filter() {
@@ -44,8 +46,8 @@
 					{#each $Store.movies as movie}
 						<tr>
 							<td><Link to="edit_movie", params={{id: movie.id}}>{ movie.id }</Link></td>
-							<td><Link to="edit_movie", params={{id: movie.id}}>{ movie.name }</Link></td>
-							<td><Link to="edit_movie", params={{id: movie.id}}>{ movie.genre }</Link></td>
+							<!-- <td><Link to="edit_movie", params={{id: movie.id}}>{ movie.name }</Link></td>
+							<td><Link to="edit_movie", params={{id: movie.id}}>{ movie.genre }</Link></td> -->
 						</tr>
 					{/each}
 				</tbody>
