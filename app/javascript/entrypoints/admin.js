@@ -1,4 +1,4 @@
-import Layout from '../admin/app.svelte';
+import Layout from '../apps/admin/app.svelte';
 import { addMessages, init } from 'svelte-i18n';
 
 addMessages('en', translations);

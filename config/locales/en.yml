@@ -2,10 +2,10 @@ en:
   time:
     formats:
       default: "%B %d %Y %H:%M"
-  bands:
-    rolling_stones: "The Rolling Stones"
-    beatles: "The Beatles"
-    acdc: "AC/DC"
+  genres:
+    scifi: "Science Fiction"
+    horror: "Horror"
+    comedy: "Comedy"
   devise:
     sign_in: "Sign in"
   vue:
@@ -15,8 +15,8 @@ en:
         homepage: "Home"
         pages: "Pages"
       home:
-        title: "Musicians"
-        breadcrumb: "All musicians"        
+        title: "Movies"
+        breadcrumb: "All movies"        
       pages:
         title: "Pages"
         server_404: "This link triggers a Server side routing 404"
@@ -24,11 +24,11 @@ en:
         server_401: "This link performs an API call that responds a 401"
         server_500: "This link performs an API call that responds a 500"
         admin_link: "» Wanna go to the admin?"
-      musicians:
-        title: "Details about this musician"
+      movies:
+        title: "Details about this movie"
         id: "Id"
         name: "Name"
-        band: "Band"        
+        genre: "Genre"        
       errors:
         title: "Error pages"
     admin:
@@ -42,20 +42,21 @@ en:
       any: "Any"
       nav:
         dashboard: "Dashboard"
-        musicians: "Musicians"  
+        movies: "Movies"  
         websockets: "Websockets"   
         logout: "Logout"
       dashboard:
         title: "Dashboard"
-        musicians: "{n, plural, =0 {No musician} one {One musician} other {# musicians}}"
-      musicians:
-        create: "+ Add a new musician"
-        new: "New musician"
+        movies: "{n, plural, =0 {No movie} one {One movie} other {# movies}}"
+      movies:
+        create: "+ Add a new movie"
+        new: "New movie"
         form:
           id: "Id"
           name: "Name"
-          band: "Band"
-        comment: "This whole CRUD section is deliberatly slowed down so you can actually see the animations. Comment out the \"slow\" method in Api::Admin::MusiciansController to use the app at full speed"     
+          description: "Description"
+          genre: "Genre"
+        comment: "This form is deliberatly slowed down so you can actually see the animations. Comment out the \"slow\" method in Api::Admin::MoviesController to use the app at full speed"     
       confirm: "Are you sure?"
       websockets: 
         placeholder: "Type your message..."
@@ -73,9 +74,9 @@ en:
         password: "Password"
     errors:
       models:
-        musician:
+        movie:
           attributes:
             name:
               blank: "Mandatory field"
-            band:
-              blank: "Please select a band"
+            genre_id:
+              blank: "Please select a genre"

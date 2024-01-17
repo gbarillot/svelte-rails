@@ -9,11 +9,11 @@ Rails.application.routes.draw do
     devise_for :users, only: [:sessions]
 
     namespace :api, :defaults => { :format => 'json' } do
-      resources :musicians, only: [:index, :show]
+      resources :movies, only: [:index, :show]
 
       namespace :admin do
         resources :dashboard, only: :index
-        resources :musicians, except: :show
+        resources :movies, except: :show
       end
     end
 
