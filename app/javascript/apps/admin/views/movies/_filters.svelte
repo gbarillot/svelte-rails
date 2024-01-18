@@ -38,7 +38,7 @@ function filter() {
 <section class="filters">
     <a href="#/" class="openable" on:click|preventDefault={() => dropped = !dropped} class:open={dropped}>{ $_('filter') }</a>
 
-    <form on:submit|preventDefault={filter} ref="filters" accept-charset="UTF-8" class="card " class:hidden={!dropped}>
+    <form on:submit|preventDefault={filter} accept-charset="UTF-8" class="card" class:hidden={!dropped}>
         <div class="row">
             <div class="col-xs-12 col-md-6 col-xl-5">
                 <label for="name">{ $_('movies.form.name') }</label>

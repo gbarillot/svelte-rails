@@ -30,6 +30,9 @@ p, span, li, table, tr, td, th, label {
   form {
     margin-top: 20px;
   }
+  .card {
+    padding-bottom: 20px;
+  }
 }
 .breadcrumb {
   display: inline-block;
