@@ -1,6 +1,6 @@
 import Homepage from './views/movies/index.svelte'
 import MovieShow from './views/movies/show.svelte'
-import PageIndex from './views/pages/index.svelte'
+import RoutingIndex from './views/pages/index.svelte'
 
 const routes = [
   {
@@ -14,9 +14,9 @@ const routes = [
     component: MovieShow
   },
   {
-    path: '/pages',
-    name: 'pages',
-    component: PageIndex
+    path: '/routing',
+    name: 'routing',
+    component: RoutingIndex
   }
 ]
 

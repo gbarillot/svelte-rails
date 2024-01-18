@@ -18,8 +18,12 @@
       <div class="col-xs-8 col-sm-9">
         <nav>
           <ul>
-            <li><Link to="root">{ $_('nav.homepage') }</Link></li>
-            <li><Link to="pages">{ $_('nav.routing') }</Link></li>
+            <li class="{['root'].includes($router.name) ? 'active' : ''}">
+              <Link to="root">{ $_('nav.homepage') }</Link>
+            </li>
+            <li class="{['routing'].includes($router.name) ? 'active' : ''}">
+              <Link to="routing">{ $_('nav.routing') }</Link>
+            </li>
             <li><a on:click|preventDefault={goAdmin} href="{window.I18n.prefix + '/admin/'}">{ $_('nav.admin') }</a></li>
           </ul>
         </nav>

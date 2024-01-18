@@ -18,8 +18,9 @@ p, span, li, table, tr, td, th, label {
     position: absolute;
     max-width: 100px;
   }
-  ul li.active {
-    border-bottom: 1px solid var(--border-active);
+  ul li.active a {
+    background-color: var(--active-link-bg);
+    color: var(--active-link-color);
   }
 }
 .filters {
@@ -84,6 +85,9 @@ p, span, li, table, tr, td, th, label {
 
 main {
   min-height: calc(100vh - 60px);
+  @media(max-width: 991px) {
+    min-height: calc(100vh - 100px);
+  }
 }
 footer {
   height: 50px;
@@ -102,11 +106,3 @@ footer {
   }
 }
 
-.preview {
-  width: 80%;
-  min-height: 200px;
-  border: 1px solid red;
-  .img[src=""] {
-    display: none !important;
-  }
-}

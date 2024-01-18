@@ -1,5 +1,8 @@
 <script>
 import {
+  _
+} from 'svelte-i18n'
+import {
   router,
   Link
 } from '@gbarillot/svelte-router'
@@ -10,10 +13,6 @@ const setLocale = ((e) => {
     `/admin${$router.fullPath}` :
     `/${e.target.value}/admin${$router.fullPath}`
 })
-
-function activeOn(paths) {
-  //console.log($router);
-}
 </script>
 
 <section class="top-nav">
@@ -22,13 +21,13 @@ function activeOn(paths) {
             <div class="col-xs-8 col-sm-9">
                 <nav>
                     <ul>
-                        <li class="{activeOn(['root'])}">
+                        <li class="{['root'].includes($router.name) ? 'active' : ''}">
                             <Link to="root">{ $_('nav.home') }</Link>
                         </li>
-                        <li class="{activeOn(['musicians', 'edit_musician', 'new_musician'])}">
+                        <li class="{['movies', 'edit_movie', 'new_movie'].includes($router.name) ? 'active' : ''}">
                             <Link to="movies">{ $_('nav.movies') }</Link>
                         </li>
-                        <li class="{activeOn(['websockets'])}">
+                        <li class="{['websockets'].includes($router.name) ? 'active' : ''}">
                             <Link to="websockets">{ $_('nav.websockets') }</Link>
                         </li>
                         <li>

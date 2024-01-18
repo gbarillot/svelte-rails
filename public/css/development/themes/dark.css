@@ -5,4 +5,6 @@
   --light-text-color: #666; 
   --accent: rgb(37, 45, 52); 
   --border-active: #fffe;
+  --active-link-bg: rgba(8, 118,155, 0.3);
+  --active-link-color: #fff;
 }
