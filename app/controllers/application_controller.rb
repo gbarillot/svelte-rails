@@ -16,12 +16,13 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }
   end
 
+  # Next 2 methods to correctly handle trailing slash depending on locale
   def after_sign_in_path_for(resource) 
     "#{admin_root_path}/"
   end
 
   def after_sign_out_path_for(resource)
-    "#{root_path}/"
+    I18n.locale == I18n.available_locales.first ? "#{root_path}" : "#{root_path}/"
   end
 
   private
