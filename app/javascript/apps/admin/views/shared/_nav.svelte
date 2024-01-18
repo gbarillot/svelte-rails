@@ -37,7 +37,7 @@ const setLocale = ((e) => {
                 </nav>
             </div>
             <div class="col-xs-4 col-sm-3">
-                <select bind:value={currentLocale} on:change={setLocale}>
+                <select bind:value={currentLocale} on:change={setLocale} id="localeSwitcher">
                     {#each window.I18n.availableLocales as name}
                     <option value={name}>{ name.toUpperCase() }</option>
                     {/each}

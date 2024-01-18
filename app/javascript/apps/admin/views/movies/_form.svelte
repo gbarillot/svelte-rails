@@ -1,8 +1,11 @@
 <script>
-import Errors from '../shared/_errors.svelte'
+import {
+  _
+} from 'svelte-i18n'
 import {
   Uploader
 } from '@/components/uploader'
+import Errors from '../shared/_errors.svelte'
 
 export let movie;
 export let genres;

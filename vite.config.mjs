@@ -11,16 +11,7 @@ export default defineConfig({
     AutoImport({
       imports: [
         'svelte',
-        'svelte/store',
-        {
-          from: 'svelte-i18n',
-          imports: ['_']
-        },
-        {
-          'axios': [
-            ['default', 'axios']
-          ]
-        }
+        'svelte/store'
       ]
     })
   ],

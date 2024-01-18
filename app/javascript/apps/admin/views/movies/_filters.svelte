@@ -1,5 +1,8 @@
 <script>
 import {
+  _
+} from 'svelte-i18n'
+import {
   router
 } from '@gbarillot/svelte-router'
 
