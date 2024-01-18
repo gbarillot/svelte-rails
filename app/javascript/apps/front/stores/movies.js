@@ -3,7 +3,6 @@ import { Xhr } from '@/support/xhr.js'
 const Store = writable({
   movies: [],
   movie: {
-    id: null,
     name: '',
     description: ''
   }

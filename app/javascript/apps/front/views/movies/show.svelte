@@ -24,15 +24,19 @@ onMount(() => {
         </ul>
 
         <div class="page">
-            <h2>{ $_('movies.title') }</h2>
-            {#if $Store.movie.id != null}
-            <p>
-                <b>{ $_('movies.id') }:</b> { $Store.movie.id }<br />
-                <b>{ $_('movies.name') }:</b> { $Store.movie.name }<br />
-                <b>{ $_('movies.band') }:</b> { $Store.movie.band }
-            </p>
-            {/if}
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <img src={ $Store.movie.poster_url } alt={ $Store.movie.name } />
+                </div>
+                <div class="col-xs-12 col-md-8">
+                    <p>
+                        <b>{ $Store.movie.name }</b>
+                        <br />
+                        { $Store.movie.genre }
+                    </p>
+                    <p>{ $Store.movie.description}</p>
+                </div>
+            </div>
         </div>
-
     </section>
 </div>
