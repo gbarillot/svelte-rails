@@ -14,7 +14,7 @@ const setLocale = ((e) => {
     `/${e.target.value}${$router.path}`
 })
 const goAdmin = (() => {
-  window.location.href = '/admin/'
+  window.location.href = `${window.I18n.prefix}/admin/`
 })
 </script>
 

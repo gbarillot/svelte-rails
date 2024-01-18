@@ -16,7 +16,7 @@ const router = createRouter({
   routes: routes
 })
 
-onRouteChange((before, after) => {
+onRouteChange((_before, after) => {
   if (!after) {
     window.location.href = '/404'
   }

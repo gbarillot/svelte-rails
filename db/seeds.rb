@@ -74,7 +74,7 @@ movies = [
   {
     name: "Star Wars: Episode V", 
     description: "After the Rebels are overpowered by the Empire, Luke Skywalker begins his Jedi training with Yoda, while his friends are pursued across the galaxy by Darth Vader and bounty hunter Boba Fett.",
-    poster: "inception",
+    poster: "star",
     rating: 5,
     released_at: '1980-01-01',
     genre_id: scifi.id
