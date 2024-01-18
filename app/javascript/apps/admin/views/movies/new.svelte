@@ -1,5 +1,6 @@
 <script>
 import {
+  router,
   Link
 } from '@gbarillot/svelte-router'
 import {
@@ -9,7 +10,7 @@ import {
 import MovieForm from './_form.svelte'
 
 function create() {
-  $Api.create();
+  $Api.create().then((movie)=> {router.goto('edit_movie', {params: {id: movie.id}})})
 }
 onMount(() => {
   $Api.new();
@@ -27,6 +28,7 @@ onMount(() => {
         <MovieForm movie={$Store.movie} genres={$Store.genres} errors={$Store.errors} />
 
         <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10 hidden-xs"></div>
             <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 ta-right">
                 <input type="submit" value={ $_('save') } />
             </div>

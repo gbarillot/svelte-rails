@@ -38,6 +38,7 @@ en:
       cancel: "Cancel"
       delete: "Delete"
       filter: "Filter"
+      confirm: "Are you sure?"
       reset_filters: "Reset filters"      
       no_result: "No result :-/"
       uploader:
@@ -63,7 +64,6 @@ en:
           poster: "Poster"
           release_date: "Release date"
         comment: "This form is deliberatly slowed down so you can actually see the animations. Comment out the \"slow\" method in Api::Admin::MoviesController to use the app at full speed"     
-      confirm: "Are you sure?"
       websockets: 
         placeholder: "Type your message..."
         publish: "Publish"

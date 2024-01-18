@@ -18,7 +18,6 @@ class Api::Admin::MoviesController < Api::Admin::AdminController
     @movie = Movie.create(movie_params)
 
     if @movie.errors.empty?
-      #@movie.attach_file!(params[:poster], :poster)
       @movie.handle_poster(params[:poster])
       
       render template: '/api/admin/movies/edit'

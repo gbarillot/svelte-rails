@@ -34,12 +34,16 @@ const Api = readable({
     Store.update(current => ({ ...current, progress: 'loading'}))
     Store.update(current => ({ ...current, errors: {}}))
 
-    await Xhr.post(`/movies`, get(Store).movie).then(response => {        
-      Store.update(current => ({ ...current, errors: {}}))
-    }).catch(error => {
-      Store.update(current => ({ ...current, errors: error.response.data.errors}))
-    }).finally(() => {
-      Store.update(current => ({ ...current, progress: ''}))
+    return new Promise(async (resolve, reject) => {
+      await Xhr.post(`/movies`, get(Store).movie).then(response => {        
+        Store.update(current => ({ ...current, errors: {}}))
+        resolve(response.data.movie);
+      }).catch(error => {
+        Store.update(current => ({ ...current, errors: error.response.data.errors}));
+        reject();
+      }).finally(() => {
+        Store.update(current => ({ ...current, progress: ''}))
+      })
     })
   },
   edit: async (id) => {
@@ -63,11 +67,15 @@ const Api = readable({
     })
   },
   destroy: async (id) => {      
-    await Xhr.delete(`/movies/${id}`).then(response => {  
-      Store.update(current => ({ ...current, errors: {}}))    
-    }).catch(error => {
-      Store.update(current => ({ ...current, errors: error.response.data.errors}))
-    }) 
+    return new Promise(async (resolve, reject) => {
+      await Xhr.delete(`/movies/${id}`).then(response => {  
+        Store.update(current => ({ ...current, errors: {}}))    
+        resolve();
+      }).catch(error => {
+        Store.update(current => ({ ...current, errors: error.response.data.errors}))
+        reject();
+      }) 
+    })
   }
 })
 

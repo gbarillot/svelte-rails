@@ -7,11 +7,15 @@
 		$Api.update($router.params.id);
 	}
 	function destroy() {
-		$Api.destroy($router.params.id);
+		if(confirm($_('confirm'))) {
+			$Api.destroy($router.params.id).then(()=> {router.goto('movies')})
+		} 		
 	}
 	onMount(() => {
 		$Api.edit($router.params.id);
 	})
+
+	console.log($router);
 </script>
 
 <section class="container movies">
