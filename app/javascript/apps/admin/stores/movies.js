@@ -14,7 +14,7 @@ const Api = readable({
     await Xhr.get(fullPath).then((response) => {
       Store.update(current => ({ ...current, 
         movies: response.data.movies,
-        genre: response.data.genres,
+        genres: response.data.genres,
         pagination: response.data.pagination
       }))
     })

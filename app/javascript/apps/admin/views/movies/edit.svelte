@@ -11,7 +11,7 @@
 	}
 	onMount(() => {
 		$Api.edit($router.params.id);
-	});
+	})
 </script>
 
 <section class="container movies">

@@ -33,14 +33,15 @@ en:
       errors:
         title: "Error pages"
     admin:
-      title: "Admin"
+      title: "Homepage"
       save: "Save"
       cancel: "Cancel"
-      filter: "Filter"
-      reset_filters: "Reset filters"
       delete: "Delete"
+      filter: "Filter"
+      reset_filters: "Reset filters"      
       no_result: "No result :-/"
-      any: "Any"
+      uploader:
+        placeholder: "Click here to add a poster picture"
       nav:
         home: "Tooling"
         movies: "Movies"  
@@ -70,7 +71,7 @@ en:
         code_example: "ActionCable.server.broadcast(\"ChatChannel\", { message: \"hey!\" })"
         comment2: "All messages are upcased"
         server_side: " server side. "
-        comment3: "If you open up multiple tabs, you messsages will be upcased in each of these tabs"
+        comment3: "If you open up multiple tabs, your messsages will be upcased in all of them."
         waiting_messages: "Waiting for messages..."
   activerecord:
     attributes:        

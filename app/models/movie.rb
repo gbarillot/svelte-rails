@@ -26,4 +26,14 @@ class Movie < ApplicationRecord
   def poster_url_or_fallback
     poster.present? ? poster_url : POSTER_FALLBACK
   end
+
+  private 
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["name", "genre_id"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["genre"]
+  end
 end

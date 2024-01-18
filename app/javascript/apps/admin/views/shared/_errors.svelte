@@ -1,13 +1,11 @@
 <script>
-  export let attr;
-  export let errors;
-  export let message;
+export let attr;
+export let errors;
+export let message;
 
-  $: message = !!errors[attr] ? errors[attr].join(',') : ''
+$: message = !!errors[attr] ? errors[attr].join(',') : ''
 </script>
 
 {#if message != ''}
-  <span class="error">{ message }</span>
+<span class="error">{ message }</span>
 {/if}
-
-

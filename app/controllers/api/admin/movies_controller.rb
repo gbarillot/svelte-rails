@@ -32,7 +32,8 @@ class Api::Admin::MoviesController < Api::Admin::AdminController
 
   def update
     if @movie.update(movie_params)
-      @movie.handle_poster(params[:poster])
+      @movie.handle_poster(params[:poster]) if params.key?(:poster)
+
       head :ok
     else
       render json: {errors: @movie.errors.messages}.to_json, status: 422
