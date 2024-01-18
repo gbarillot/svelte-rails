@@ -1,19 +1,7 @@
 <script>
-const setTheme = ((theme) => {
-  let root = document.querySelector('html');
-  root.setAttribute('data-theme', theme);
-  document.cookie = `theme=${theme}; path=/`;
-})
-
-const getCookie = ((name) => {
-  let value = '; ' + document.cookie;
-  let parts = value.split(`; ${name}=`);
-  if (parts.length == 2) return parts.pop().split(';').shift();
-})
-
 onMount(async () => {
-  const theme = getCookie('theme');
-  theme ? setTheme(theme) : setTheme('light');
+  const theme = window.getCookie('theme');
+  theme ? window.setTheme(theme) : window.setTheme('light');
 })
 </script>
 
