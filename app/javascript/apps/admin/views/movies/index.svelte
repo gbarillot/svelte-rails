@@ -61,7 +61,7 @@ onMount(() => {
             </tbody>
         </table>
         {:else}
-        <h3 class="card ta-center">{ $_('no_result') }</h3>
+        <h3 class="ta-center">{ $_('no_result') }</h3>
         {/if}
 
         <Pagination pagination={$Store.pagination} callback={load}></Pagination>
