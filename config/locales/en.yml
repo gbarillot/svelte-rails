@@ -2,10 +2,6 @@ en:
   time:
     formats:
       default: "%B %d %Y %H:%M"
-  genres:
-    scifi: "Science Fiction"
-    horror: "Horror"
-    comedy: "Comedy"
   devise:
     sign_in: "Sign in"
   vue:
@@ -24,14 +20,9 @@ en:
         client_404: "This link triggers a Client side routing 404"
         server_401: "This link performs an API call that responds a 401"
         server_500: "This link performs an API call that responds a 500"
-        admin_link: "» Wanna go to the admin?"
       movies:
-        title: "Details about this movie"
-        id: "Id"
         name: "Name"
         genre: "Genre"        
-      errors:
-        title: "Error pages"
     admin:
       title: "Homepage"
       save: "Save"
@@ -55,7 +46,6 @@ en:
         create: "+ Add a new movie"
         new: "New movie"
         form:
-          id: "Id"
           name: "Name"
           description: "Description"
           genre: "Genre"
@@ -84,5 +74,7 @@ en:
           attributes:
             name:
               blank: "Mandatory field"
-            genre_id:
-              blank: "Please select a genre"
+            description:
+              blank: "Mandatory field"
+            genre:
+              required: "Please select a genre"

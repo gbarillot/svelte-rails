@@ -2,10 +2,6 @@ fr:
   time:
     formats:
       default: "%B %d %Y %H:%M"
-  bands:
-    rolling_stones: "The Rolling Stones"
-    beatles: "The Beatles"
-    acdc: "AC/DC"
   devise:
     sign_in: "Authentification"
   vue:
@@ -13,49 +9,50 @@ fr:
       title: "Front end"
       nav:
         homepage: "Accueil"
-        pages: "Pages"
+        routing: "Routing"
+        admin: "Admin"
       home:
-        title: "Musiciens"
-        breadcrumb: "Tous les musiciens"        
+        title: "Movies"
+        breadcrumb: "Tous les films"        
       pages:
         title: "Pages"
         server_404: "Ce lien provoque une 404 venant du routage serveur"
         client_404: "Ce lien provoque un 404 venant du routage côté client"
-        server_401: "Ce lien appelle l'API qui lui répond une 401"
-        server_500: "Ce lien appelle l'API qui lui répond une 500"
-        admin_link: "» Envie de voir l'admin ?"
-      musicians:
-        title: "Details concernant ce musicien"
-        id: "Id"
+        server_401: "Ce lien appelle l'API qui répond une 401"
+        server_500: "Ce lien appelle l'API qui répond une 500"
+      movies:
         name: "Nom"
         band: "Groupe"        
-      errors:
-        title: "Pages d'erreurs"
     admin:
       title: "Admin"
       save: "Enregistrer"
       cancel: "Annuler"
+      delete: "Supprimer"
       filter: "Filtrer"
       reset_filters: "Reseter les filtres"
-      delete: "Supprimer"
       no_result: "Aucun resultat :-/"
-      any: "Tous"
+      uploader:
+        placeholder: "Cliquez pour ajouter une image"
       nav:
-        dashboard: "Dashboard"
-        musicians: "Musiciens"
+        home: "Tooling"
+        movies: "Films"
         websockets: "Websockets"      
         logout: "Déconnection"
-      dashboard:
-        title: "Dashboard"
-        musicians: "{n, plural, =0 {Aucun musicien} one {Un musicien} other {# musicians}}" 
-      musicians:
-        create: "+ Ajouter un musicien"
-        new: "Nouveau musicien"        
+      homepage:
+        title: "Tooling"
+        movies: "{n, plural, =0 {No movie} one {Un film} other {# films}}" 
+      movies:
+        create: "+ Ajouter un film"
+        new: "Nouveau film"        
         form:
-          id: "Id"
           name: "Nom"
-          band: "Groupe"   
-        comment: "This whole CRUD section is deliberatly slowed down so you can actually see the animations. Comment out the \"slow\" method in Api::Admin::MusiciansController to use the app at full speed"     
+          description: "Description"
+          genre: "Genre"
+          rating: "Note"
+          restricted: "Public averti"
+          poster: "Illustration"
+          release_date: "Sortie"  
+        comment: "Ce formulaire est volontairement ralenti pour que vous puissiez voir l'animation. Commentez la méthode \"slow\" dans Api::Admin::MoviesController pour utiliser le fomulaire normalement"     
       confirm: "Etes-vous sur ?"
       websockets: 
         placeholder: "Tapez un message..."
@@ -73,9 +70,11 @@ fr:
         password: "Mot de passe"
     errors:
       models:
-        musician:
+        movie:
           attributes:
             name:
               blank: "Saisie requise"
-            band:
-              blank: "Merci de sélectionner un groupe"
+            description:
+              blank: "Saisie requise"
+            genre:
+              required: "Merci de sélectionner un genre"

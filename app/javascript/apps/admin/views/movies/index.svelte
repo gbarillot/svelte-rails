@@ -41,7 +41,7 @@ onMount(() => {
         <table class="table movies">
             <thead>
                 <tr>
-                    <th style="width: 100px">{ $_('movies.form.id') }</th>
+                    <th style="width: 100px"></th>
                     <th>{ $_('movies.form.name') }</th>
                     <th>{ $_('movies.form.genre') }</th>
                 </tr>
