@@ -85,6 +85,7 @@ a.delete:hover {
   padding: 20px;
   padding-top: 20%;
   font-size: 25px;
+  font-weight: lighter;
 }
 
 .preview span.placeholder.hidden {

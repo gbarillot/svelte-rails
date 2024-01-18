@@ -12,7 +12,7 @@ onMount(() => {
 })
 </script>
 
-<section class="container">
+<section class="container tooling">
     <div class="row">
         <div class="col-xs-12 col-md-3 card">
             <h3>Rails 7</h3>

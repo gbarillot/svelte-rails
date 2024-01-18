@@ -21,7 +21,7 @@ onMount(() => {
 });
 </script>
 
-<section class="container">
+<section class="container movies">
     <div class="row">
         <div class="col-xs-12 col-lg-8 col-xl-9">
             <ul class="breadcrumb">
