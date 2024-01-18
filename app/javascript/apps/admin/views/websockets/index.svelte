@@ -22,7 +22,7 @@ function publish() {
     </ul>
 
     <div class="row">
-        <div class="col-xs-12 col-md-6 card">
+        <div class="col-xs-12 col-md-6">
             <form on:submit|preventDefault={publish} accept-charset="UTF-8">
                 <input type="input" bind:value={message} placeholder={$_('websockets.placeholder')} />
                 <input type="submit" value={$_('websockets.publish')} />
