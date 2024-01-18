@@ -3,9 +3,6 @@ import {
   _
 } from 'svelte-i18n'
 import {
-  Link
-} from '@gbarillot/svelte-router'
-import {
   Api
 } from '../../stores/movies'
 

@@ -169,9 +169,11 @@
   dependencies:
     tslib "^2.4.0"
 
-"@gbarillot/svelte-router@link:../svelte-router":
-  version "0.0.0"
-  uid ""
+"@gbarillot/svelte-router@https://github.com/gbarillot/svelte-router":
+  version "1.0.0"
+  resolved "https://github.com/gbarillot/svelte-router#0c9a1add04288a5987a8716c00b2ee9b6b496e16"
+  dependencies:
+    rename "^1.0.4"
 
 "@jridgewell/gen-mapping@^0.3.0":
   version "0.3.3"

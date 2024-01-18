@@ -32,6 +32,7 @@
 /public/assets
 /public/storage
 
+dump.rdb
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 

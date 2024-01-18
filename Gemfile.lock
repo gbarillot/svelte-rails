@@ -113,6 +113,7 @@ GEM
       ruby2_keywords
     dry-cli (1.0.0)
     erubi (1.12.0)
+    foreman (0.87.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -289,6 +290,7 @@ DEPENDENCIES
   cypress-rails
   debug
   devise
+  foreman
   jbuilder
   kaminari
   puma (>= 5.0)
