@@ -28,9 +28,10 @@
     console.log(base64);
   };
 
-  function clickMe(e) {
+  function clearPoster(e) {
     e.preventDefault();
-    document.getElementById('poster-handler').click();
+    movie.poster_url = '';
+    movie.poster = null;
   }
 </script>
 
@@ -39,8 +40,9 @@
     <fieldset>
       <label for="name">{ $_('movies.form.poster') }</label>
       <div class="uploader">
+        <a class="delete" href="#/" class:hidden={movie.poster_url == ''} title={ $_('delete') } on:click={clearPoster}>×</a>
         <a class="preview" on:click={clickMe} href='#/' aria="uploader" title="click to upload">
-          <span class:hidden={movie.poster_url != ''}>Cliquez pour ajouter une image</span>
+          <span class="placeholder" class:hidden={movie.poster_url != ''}>Cliquez pour ajouter une image</span>          
           <img class="img" src={movie.poster_url} alt="preview" class:hidden={movie.poster_url == ''}/>  
         </a>    
         <input id="poster-handler" type="file" bind:value={movie.poster} on:change={uploadImage}>
