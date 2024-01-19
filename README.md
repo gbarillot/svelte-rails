@@ -23,12 +23,16 @@ all you need to build up your new project!
 ## Installation
 
 ### Local
-
 ```
 bundle install
 npm install
 bundle exec rails db:setup
 foreman start
+```
+
+### Docker
+```
+docker-compose up
 ```
 
 **Make sure you have a running Redis on port 6379**
