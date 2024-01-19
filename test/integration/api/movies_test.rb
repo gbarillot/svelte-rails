@@ -1,11 +1,11 @@
 require 'test_helper'
 
 class Api::MoviesControllerTest < ActionDispatch::IntegrationTest
-  describe "gome page" do
-    it "can see the welcome page" do
+  describe "Home page" do
+    it "returns an array of movies" do
       get api_movies_path
       
-      assert_equal json_response['movies'].length, 1
+      assert_equal json_response['movies'].length, 2
     end
   end
 end

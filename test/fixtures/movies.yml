@@ -2,3 +2,8 @@ one:
   name: 'first movie'
   description: 'first description'
   genre: one
+
+two:
+  name: 'second movie'
+  description: 'second description'
+  genre: two

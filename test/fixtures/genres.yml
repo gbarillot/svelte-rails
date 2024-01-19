@@ -1,2 +1,8 @@
 one:
   name: 'scifi'
+
+two:
+  name: 'thriller'
+
+three:
+  name: 'fantasy'

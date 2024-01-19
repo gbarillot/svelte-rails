@@ -1,13 +1,15 @@
 class Api::Admin::MoviesController < Api::Admin::AdminController
   # DELETE ME: Dummy emulation of a slow network so you can see the UI animation in dev. mode
-  before_action :slow, only: [:create, :update] 
+  before_action :slow, only: [:create, :update] unless Rails.env.test?
   before_action :load_movie, except: [:index, :new, :create]  
 
   def index
+    #raise 'here'
+    #raise params.inspect
     @movies = Movie.ransack(search_params)
                    .result
                    .page(params[:page])
-                   .per(4)
+                   .per(params[:per])
   end
 
   def new
