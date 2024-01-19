@@ -25,21 +25,16 @@ all you need to build up your new project!
 ```
 git clone git@github.com:gbarillot/rails-vue-demo-app.git
 cd svelte-on-rails
-``` 
-
-```
-git clone git@github.com:gbarillot/rails-vue-demo-app.git
-cd svelte-on-rails
 bundle install
 yarn install
 bundle exec rails db:setup
 foreman start
 ```
 
-** Make sure you have a running Redis on port 6379**
+**Make sure you have a running Redis on port 6379**
 
 
-## A note on CSS
+### A note on CSS
 As an experiment, CSS is done right in the public/css/development directory.
 
 Pros:
