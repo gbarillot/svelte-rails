@@ -12,6 +12,7 @@ Includes all the basic features you need to build a real world app with:
 - **Pagination** with Kaminari
 - **Dynamic search filters** with Ransack, 100% routing and query string friendly
 - **Websockets** zero configuration needed, ActionCable out of the box
+- **Image upload** with ActiveStorage wired to the API and ready to roll
 - **Bootstrap like grid** using CSS Grid layout
 
 All of this is designed with maintainability and readability in mind, slightly inspired by the Rails conventions.
@@ -47,10 +48,10 @@ Pros:
 
 Cons:
 - You should disable cache in DevTools in Dev
-- As is, not suitable for production!
+- Relies on bleeding edge native CSS (nesting...), not suitable for production!
 
 The purpose of this repo is demoing Svelte + Vite + Rails, not CSS, so feel free to use whatever method 
-you'd prefer to handle styles. Sprocket is left as is and you can use it too.
+you'd prefer to handle styles. Sprocket is still available in the Rails app, you can use it too.
 
 ## Licence
 
