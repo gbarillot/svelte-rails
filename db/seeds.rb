@@ -115,7 +115,6 @@ movies.each do |movie|
     genre_id: movie[:genre_id],  
   )
 
-  puts m.name
   poster_64 = Base64.encode64(File.read(Rails.root.join('test', 'fixtures', 'files', "#{movie[:poster]}.jpg")))
   m.handle_poster(poster_64)
 
