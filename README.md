@@ -39,11 +39,11 @@ docker compose up
 ```
 
 ### A note on CSS
-As an experiment, CSS is done right in the public/css/development directory.
+As an experiment, CSS is done right in a public/css/development directory.
 
 Pros:
-- No compile time: faster page reloads
-- Allows CSS editing + saving directly from Chrome Devtools
+- No compile time: faster workflow
+- Enables direct editing and saving of CSS from Chrome DevTools (productivity goes 🚀)
 - Easier / more fexible to manage imports and variables (IMHO)
 
 Cons:
