@@ -34,7 +34,7 @@ foreman start
 
 ### Docker
 ```
-docker-compose up
+docker compose up
 ```
 
 ### A note on CSS
