@@ -1,10 +1,6 @@
 FROM ruby:3.2.2
-# debian:bullseye-slim
-
-# Set environment variables
 ENV LANG C.UTF-8
 
-# Install a basic set of utilities
 RUN apt-get update -qq && \
     apt-get install -y \
       curl \
@@ -28,6 +24,7 @@ RUN apt-get update && apt-get install nodejs
 
 RUN npm install
 RUN bundle install
+RUN sh -c "bundle exec rails db:setup RAILS_ENV=development"
 
 # Start a bash shell when the container runs
 CMD ["/bin/bash"]

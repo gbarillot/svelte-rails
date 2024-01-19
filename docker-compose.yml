@@ -13,11 +13,12 @@ services:
   web:
     build: .
     image: 'rails-svelte'
-    command: sh -c "rails db:setup && export REDIS_URL='redis' && rm -rf tmp/pids && foreman start"
+    command: sh -c "export REDIS_URL='redis' && rm -rf tmp/pids && foreman start"
     volumes:
       - .:/app
       - /app/node_modules
       - /app/storage
+      - /app/public/storage
     ports:
       - 3000:3000
       - 3036:3036
