@@ -22,18 +22,11 @@ all you need to build up your new project!
 
 ## Installation
 
-```
-git clone git@github.com:gbarillot/rails-vue-demo-app.git
-cd svelte-on-rails
-``` 
-
 ### Local
 
 ```
-git clone git@github.com:gbarillot/rails-vue-demo-app.git
-cd svelte-on-rails
 bundle install
-yarn install
+npm install
 bundle exec rails db:setup
 foreman start
 ```
