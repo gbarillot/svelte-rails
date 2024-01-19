@@ -125,6 +125,8 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    json-schema (4.1.1)
+      addressable (>= 2.8)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.2)
@@ -149,6 +151,14 @@ GEM
     matrix (0.4.2)
     mini_mime (1.1.5)
     minitest (5.20.0)
+    minitest-focus (1.4.0)
+      minitest (>= 4, < 6)
+    minitest-rails (7.1.0)
+      minitest (~> 5.20)
+      railties (~> 7.1.0)
+    minitest-spec-rails (7.2.0)
+      minitest (>= 5.0)
+      railties (>= 4.1)
     msgpack (1.7.2)
     mutex_m (0.2.0)
     net-imap (0.4.9)
@@ -230,16 +240,10 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rexml (3.2.6)
     route_translator (14.1.1)
       actionpack (>= 6.1, < 7.2)
       activesupport (>= 6.1, < 7.2)
     ruby2_keywords (0.0.5)
-    rubyzip (2.3.2)
-    selenium-webdriver (4.16.0)
-      rexml (~> 3.2, >= 3.2.5)
-      rubyzip (>= 1.2.2, < 3.0)
-      websocket (~> 1.0)
     spring (4.1.3)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
@@ -271,7 +275,6 @@ GEM
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
     webrick (1.8.1)
-    websocket (1.2.10)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -292,18 +295,23 @@ DEPENDENCIES
   devise
   foreman
   jbuilder
+  json-schema
   kaminari
+  minitest
+  minitest-focus
+  minitest-rails
+  minitest-spec-rails
   puma (>= 5.0)
   rails (~> 7.1.2)
   ransack
   redis (>= 4.0.1)
   route_translator
-  selenium-webdriver
   spring
   sprockets-rails
   sqlite3 (~> 1.4)
   tzinfo-data
   vite_rails
+  warden
   web-console
 
 BUNDLED WITH

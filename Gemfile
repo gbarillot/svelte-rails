@@ -69,6 +69,11 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
+  gem 'capybara'
+  gem 'minitest'
+  gem 'minitest-rails'
+  gem 'minitest-spec-rails'
+  gem 'minitest-focus'
+  gem 'json-schema'
+  gem 'warden'
 end

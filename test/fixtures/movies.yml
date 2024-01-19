@@ -1,0 +1,4 @@
+one:
+  name: 'first movie'
+  description: 'first description'
+  genre: one
