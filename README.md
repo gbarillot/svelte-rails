@@ -27,8 +27,6 @@ git clone git@github.com:gbarillot/rails-vue-demo-app.git
 cd svelte-on-rails
 ``` 
 
-### Local
-
 ```
 git clone git@github.com:gbarillot/rails-vue-demo-app.git
 cd svelte-on-rails
@@ -40,11 +38,6 @@ foreman start
 
 ** Make sure you have a running Redis on port 6379**
 
-### Docker
-
-``` 
-docker-compose up
-```
 
 ## A note on CSS
 As an experiment, CSS is done right in the public/css/development directory.
