@@ -43,8 +43,8 @@ As an experiment, CSS is done right in a public/css/development directory.
 
 Pros:
 - No compile time: faster workflow
-- Enables direct editing and saving of CSS from Chrome DevTools (productivity goes 🚀)
-- Easier / more fexible to manage imports and variables (IMHO)
+- Enables direct editing and saving from Chrome DevTools (productivity goes 🚀)
+- Easier / more fexible to manage imports and variables 
 
 Cons:
 - You should disable cache in DevTools in Dev
