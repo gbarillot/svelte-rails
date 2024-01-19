@@ -17,6 +17,7 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
+      - /app/storage
     ports:
       - 3000:3000
       - 3036:3036
