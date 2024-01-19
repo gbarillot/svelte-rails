@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  redis:
+    image: 'redis'
+    restart: always
+    command: redis-server
+    ports:
+      - 6379:6379
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+
+  web:
+    build: .
+    image: 'rails-svelte'
+    command: sh -c "rails db:setup && export REDIS_URL='redis' && rm -rf tmp/pids && foreman start"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - 3000:3000
+      - 3036:3036
+    
