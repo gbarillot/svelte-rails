@@ -120,5 +120,5 @@ movies.each do |movie|
   m.handle_poster(poster_64)
 
   # Avoid crashing SQLite "BusyException: database is locked"
-  sleep 1
+  sleep 0.5
 end

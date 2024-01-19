@@ -17,9 +17,7 @@ services:
     working_dir: /app
     command: sh -c "export REDIS_URL='redis' && rm -rf tmp/pids && foreman start"
     volumes:
-      - type: bind
-        source: .
-        target: /app
+      - .:/app
     ports:
       - 3000:3000
       - 3036:3036
