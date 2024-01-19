@@ -30,13 +30,12 @@ bundle exec rails db:setup
 foreman start
 ```
 
+**Make sure you have a running Redis on port 6379**
+
 ### Docker
 ```
 docker-compose up
 ```
-
-**Make sure you have a running Redis on port 6379**
-
 
 ### A note on CSS
 As an experiment, CSS is done right in the public/css/development directory.
