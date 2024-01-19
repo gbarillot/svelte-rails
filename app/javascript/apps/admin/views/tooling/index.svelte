@@ -20,15 +20,15 @@ onMount(() => {
         </div>
         <div class="col-xs-12 col-md-3 card">
             <h3>Svelte</h3>
-            <p><a href="https://vuejs.org/guide/" target="_blank">SPA without the pain</a></p>
+            <p><a href="https://svelte.dev/" target="_blank">SPA without the pain</a></p>
         </div>
         <div class="col-xs-12 col-md-3 card">
             <h3>Stores</h3>
-            <p><a href="https://pinia.vuejs.org/" target="_blank">State management, uncluttered</a></p>
+            <p><a href="https://svelte.dev/docs/svelte-store" target="_blank">State management, uncluttered</a></p>
         </div>
         <div class="col-xs-12 col-md-3 card">
             <h3>SPA router</h3>
-            <p><a href="https://router.vuejs.org/" target="_blank">Inspired by Vue router</a></p>
+            <p><a href="https://github.com/gbarillot/svelte-router" target="_blank">Inspired by Vue router</a></p>
         </div>
         <div class="col-xs-12 col-md-3 card">
             <h3>Axios</h3>
@@ -44,7 +44,7 @@ onMount(() => {
         </div>
         <div class="col-xs-12 col-md-3 card">
             <h3>I18n</h3>
-            <p><a href="https://kazupon.github.io/vue-i18n/" target="_blank">
+            <p><a href="https://github.com/kaisermann/svelte-i18n" target="_blank">
                 { $_('homepage.movies', {values: { n: 0 }}) },
                 { $_('homepage.movies', {values: { n: 1 }}) },
                 { $_('homepage.movies', {values: { n: $Store.metrics.movies }}) }</a>
