@@ -4,8 +4,6 @@ class Api::Admin::MoviesController < Api::Admin::AdminController
   before_action :load_movie, except: [:index, :new, :create]  
 
   def index
-    #raise 'here'
-    #raise params.inspect
     @movies = Movie.ransack(search_params)
                    .result
                    .page(params[:page])
