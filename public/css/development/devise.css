@@ -1,6 +1,11 @@
-.devise {
-  > .row {
-    margin-top: 50px;
+.devise { 
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0 auto;
+  
+  .row {
+    width: 100%;
     @media (min-width: 576px) and (max-width: 991px) {
       > div {
         grid-column: 2/span 10 !important;
