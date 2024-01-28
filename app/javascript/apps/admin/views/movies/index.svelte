@@ -30,7 +30,7 @@ onMount(() => {
             </ul>
         </div>
         <div class="col-xs-12 col-lg-4 col-xl-3 ta-right">
-            <Link to="new_movie" attrs={{class: "outline", role: "button", style: "width: 100%"}}>{ $_('movies.create') }</Link>
+            <Link to="new_movie" attrs={{class: "button button-primary", role: "button", style: "width: 100%"}}>{ $_('movies.create') }</Link>
         </div>
     </div>
 

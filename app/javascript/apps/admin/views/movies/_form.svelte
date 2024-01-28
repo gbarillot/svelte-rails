@@ -32,7 +32,7 @@ function setPoster(poster, poster_url) {
     </div>
 
     <div class="col-xs-12 col-md-8">
-        <fieldset>
+        <fieldset class="outlined-input">
             <label for="name">{ $_('movies.form.name') }</label>
             <Errors attr="name" errors={errors} />
             <input id="name" type="text" bind:value={movie.name}>

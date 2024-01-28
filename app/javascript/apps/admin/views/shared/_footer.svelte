@@ -13,7 +13,7 @@ onMount(async () => {
                 <a href="https://github.com/gbarillot">Github</a> |
                 <a href="https://twitter.com/gbarillot">Twitter</a>
             </div>
-            <div class="col-xs-12 col-lg-4 ta-right">
+            <div class="col-xs-12 col-lg-4">
                 <b>Theme: </b>
                 <a href={'#'} on:click|preventDefault={() => setTheme('light')}>light</a> |
                 <a href={'#'} on:click|preventDefault={() => setTheme('dark')}>dark</a>
