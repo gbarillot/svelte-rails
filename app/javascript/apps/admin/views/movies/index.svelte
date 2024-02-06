@@ -51,7 +51,7 @@ onMount(() => {
                 <tr>
                     <td>
                         <Link to="edit_movie", params={{id: movie.id}}>
-                        <img src={ movie.poster_url } alt="movie.name"/>
+                        <img src={ movie.poster_url } alt={ movie.name }/>
                         </Link>
                     </td>
                     <td><Link to="edit_movie", params={{id: movie.id}}>{ movie.name }</Link></td>
