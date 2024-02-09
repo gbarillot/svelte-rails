@@ -16,7 +16,9 @@ export let lastPages = [];
 function go(e) {
   const url = new URL(e.target.href);
   const params = new URLSearchParams(url.search).toString();
-  router.push($router.path, { query: params })
+  router.push($router.path, {
+    query: params
+  })
   callback();
 }
 
@@ -26,7 +28,9 @@ function setPerPage(perPage) {
     per: perPage.target.value,
     page: 1
   }).toString();
-  router.push($router.path, { query: params })
+  router.push($router.path, {
+    query: params
+  })
   callback();
 }
 
@@ -39,25 +43,27 @@ $: pageLink = function(n) {
 }
 
 $: {
-  firstPages = [];  
+  firstPages = [];
   for (let i = 1; i <= 5; i++) {
-    if(i <= pagination.pages) { firstPages.push(i) }
-  }   
+    if (i <= pagination.pages) {
+      firstPages.push(i)
+    }
+  }
   lastPages = []
-  if(pagination.pages > 5) {
+  if (pagination.pages > 5) {
     for (let i = pagination.pages - 5; i <= pagination.pages; i++) {
-      lastPages.push(i) 
-    } 
+      lastPages.push(i)
+    }
   }
 }
 
 $: {
   centerPages = [];
-  if(pagination.pages > 10) {
-    let center = (pagination.current < 4 || pagination.current > pagination.pages - 4) ? Math.floor(pagination.pages / 2) : pagination.current 
+  if (pagination.pages > 10) {
+    let center = (pagination.current < 4 || pagination.current > pagination.pages - 4) ? Math.floor(pagination.pages / 2) : pagination.current
     for (let i = center - 2; i <= center + 2; i++) {
       centerPages.push(i);
-    } 
+    }
     centerPages = centerPages.filter(item => !firstPages.includes(item) && !lastPages.includes(item));
   }
 }
@@ -65,9 +71,9 @@ $: {
 
 <section class="container-fluid pagination">
     <select on:change={setPerPage}>
-      {#each [5, 10, 25, 50] as perPage}
+        {#each [5, 10, 25, 50] as perPage}
         <option value={perPage} selected={pagination.per_page == perPage}>{ perPage }</option>
-      {/each}
+        {/each}
     </select>
 
     {#if pagination.next || pagination.previous}
@@ -93,7 +99,7 @@ $: {
         {#each lastPages as page}
         <li><a on:click|preventDefault={go} href={pageLink(page)} class={pagination.current == page ? 'active' : ''}>{ page }</a></li>
         {/each}
-        
+
         {#if pagination.pages > 0 && pagination.current != pagination.pages}
         <li><a on:click|preventDefault={go} href={pageLink(pagination.current + 1)}>&raquo;</a></li>
         {/if}
