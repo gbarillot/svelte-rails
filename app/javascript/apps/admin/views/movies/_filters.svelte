@@ -19,6 +19,7 @@ function init(key) {
 }
 
 function reset() {
+  form = Object.fromEntries(Object.entries(form).map(([key, _]) => [key, '']));
   router.push($router.path);
   callback();
 }
