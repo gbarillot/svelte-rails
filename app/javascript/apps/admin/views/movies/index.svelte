@@ -11,7 +11,7 @@ import {
   Store
 } from '../../stores/movies'
 import Filters from './_filters.svelte'
-import Pagination from '../shared/_pagination.svelte'
+import { Pagination } from '@/components/pagination'
 
 function load() {
   $Api.index($router.fullPath);

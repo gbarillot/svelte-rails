@@ -47,7 +47,6 @@ gem 'route_translator'
 gem 'kaminari'
 gem 'ransack'
 gem 'devise'
-gem 'cypress-rails'
 gem 'vite_rails'
 gem 'foreman'
 
@@ -76,4 +75,5 @@ group :test do
   gem 'minitest-focus'
   gem 'json-schema'
   gem 'warden'
+  #gem 'cypress-rails'
 end

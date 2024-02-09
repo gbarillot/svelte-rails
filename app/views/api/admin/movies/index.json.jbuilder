@@ -12,5 +12,6 @@ json.genres Genre.all.each do |genre|
 end
 
 json.partial! partial: '/api/admin/shared/pagination', locals: {
-  kind: @movies
+  kind: @movies,
+  per_page: params[:per] 
 }

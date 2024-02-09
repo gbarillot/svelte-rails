@@ -69,33 +69,38 @@ p, span, li, table, tr, td, th, label {
   padding: 40px;
 }
 .pagination {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: right;
-  padding: 0;
-  height: 40px;
-  li {
-    background-color: var(--active-link-bg);
-    border-radius: 50%;
-    margin-left: 5px;
-    text-align: center;
-    list-style-type: none;
-    width: 40px;
+  select {
+    width: 100px;
+    float: left;
+  }
+  ul {
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: right;
+    padding: 0;
+    padding-top: 10px;
     height: 40px;
-    line-height: 40px;
-    &:hover {
-      background-color: var(--active-link-color);
-      a {
-        color: #fff;
+    li {     
+      margin-left: 5px;
+      text-align: center;
+      list-style-type: none;
+      height: 40px;
+      line-height: 40px;
+      a {   
+        border-radius: 5px;
+        padding: 0 10px;
+        display: inline-block;
+        color: var(--light-text-color);
+        text-decoration: none;
+        font-size: 20px;
+        line-height: 35px;
+        outline: 0;
+        &.active {
+          background-color: var(--active-link-bg);
+          color: var(--active-link-color);
+        }
       }
-    }
-    a {
-      text-decoration: none;
-      color: var(--light-text-color);
-      font-size: 30px;
-      line-height: 35px;
-      padding: 0;
-      outline: 0;
     }
   }
 }

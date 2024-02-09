@@ -1,4 +1,4 @@
-obj = paginate(kind)
+obj = paginate(kind, per_page ||= nil)
 json.pagination do
   json.current obj[:current]
   json.previous obj[:previous]

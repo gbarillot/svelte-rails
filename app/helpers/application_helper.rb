@@ -4,7 +4,9 @@ module ApplicationHelper
     I18n.t('.')[:vue][section].to_json.html_safe
   end
 
-  def paginate(scope, default_per_page = scope.default_per_page)
+  def paginate(scope, per_page = nil)
+    default_per_page = per_page.blank? ? scope.default_per_page : per_page
+
     collection = scope.page(params[:page]).per((params[:per_page] || default_per_page).to_i)
     current, total, per_page = collection.current_page, collection.total_pages, collection.limit_value
 
